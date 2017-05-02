@@ -10,7 +10,8 @@ import com.example.shooting_sample.mono.Mono;
 
 public class HanteiList<E extends Mono> extends ArrayList<E> {
     private static final long serialVersionUID = -3775499867397182898L;
-    public HanteiList() {
+    public HanteiList()
+    {
         super();
     }
     public E atari(Rect r) {
