@@ -13,7 +13,7 @@ import com.example.shooting_sample.Vect;
 
 public class Anata extends AbstractShooter implements Mikata {
     private static final int[] ids = {R.drawable.anata};
-    private final static double shootperiod = 500;
+    private final static double shootperiod = 1000;
     private static final Vect tamadp = new Vect(0, -1);
     private double shoottic;
     public Anata(Context context, HanteiList<Shootable> tamalist) {
