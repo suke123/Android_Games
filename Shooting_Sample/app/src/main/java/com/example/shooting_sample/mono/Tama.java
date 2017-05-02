@@ -28,6 +28,6 @@ public class Tama extends AbstractShootable {
     }
     @Override
     public double getInterval() {
-        return 1;
+        return 10; //弾の画像を入れ替えるインターバル？
     }
 }
