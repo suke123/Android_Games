@@ -23,9 +23,10 @@ public class Score {
 
     public void draw(Canvas canvas) {
         String sc = "000000000" + score;
+        paint.setTextSize(12);
         canvas.drawText(sc.substring(sc.length() - 10), 0, paint.getTextSize(), paint);
     }
-    
+
     public void add(int point) {
         score += point;
     }
