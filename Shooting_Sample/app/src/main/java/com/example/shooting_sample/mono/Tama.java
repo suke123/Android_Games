@@ -28,6 +28,6 @@ public class Tama extends AbstractShootable {
     }
     @Override
     public double getInterval() {
-        return 10;
+        return 1;
     }
 }

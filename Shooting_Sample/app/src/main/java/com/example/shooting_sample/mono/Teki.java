@@ -12,7 +12,7 @@ public class Teki extends AbstractMono {
     private static final int[] ids = {R.drawable.teki1, R.drawable.teki2};
     private int dpindex;
     private Vect[] dps = {new Vect(1, 1), new Vect(-1, 1)};
-    private double dpcycle = 1000;
+    private double dpcycle = 1000; //敵の移動間隔（左端からどこまで移動し、跳ね返るか）
     private double dpcounter;
     public Teki(Context context) {
         super(context, ids);
@@ -38,7 +38,7 @@ public class Teki extends AbstractMono {
     @Override
     public int getScore() {
         return 100;
-    }
+    } //スコア加算
     @Override
     public void step(double t, int width, int height) {
         period += t;
