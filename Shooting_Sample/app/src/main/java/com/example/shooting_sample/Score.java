@@ -23,7 +23,7 @@ public class Score {
 
     public void draw(Canvas canvas) {
         String sc = "000000000" + score;
-        paint.setTextSize(50);
+        paint.setTextSize(20);
         canvas.drawText(sc.substring(sc.length() - 10), 0, paint.getTextSize(), paint);
     }
 
