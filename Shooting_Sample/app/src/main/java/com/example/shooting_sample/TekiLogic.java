@@ -9,7 +9,7 @@ import com.example.shooting_sample.mono.Teki;
  */
 
 public class TekiLogic {
-    private static double period = 10;
+    private static double period = 100; //敵の出現時間
     private final Context context;
     private final HanteiList<Mono> list;
     private double tic;
@@ -20,7 +20,7 @@ public class TekiLogic {
         list.add(createTeki());
     }
     private Mono createTeki() {
-        return new Teki(context, 200, 30);
+        return new Teki(context, 20, 30);
     }
     public void step(double tstep, int width, int height) {
         tic += tstep;
