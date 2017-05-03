@@ -20,7 +20,7 @@ public class TekiLogic {
         list.add(createTeki());
     }
     private Mono createTeki() {
-        return new Teki(context, 0, 0);
+        return new Teki(context, 200, 30); //敵の出現座標
     }
     public void step(double tstep, int width, int height) {
         tic += tstep;
