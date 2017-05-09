@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         //リソースIDの設定
         btn = (Button)findViewById(R.id.button);
-        txt01 = (TextView)findViewById(R.id.text);
+        txt01 = (TextView)findViewById(R.id.text01);
 
         //Listenerの設定
         btn.setOnClickListener(this);
