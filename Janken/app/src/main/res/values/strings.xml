@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Janken</string>
+    <string name="text_1">Count:%1$d</string>
+    <string name="btn01">Click Me!</string>
+</resources>
