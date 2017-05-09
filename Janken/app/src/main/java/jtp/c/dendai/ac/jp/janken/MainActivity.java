@@ -19,13 +19,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         //リソースIDの設定
-        btn = (Button)findViewById(R.id.button01);
-        txt01 = (TextView)findViewById(R.id.text01);
+        btn = (Button)findViewById(R.id.button);
+        txt01 = (TextView)findViewById(R.id.text);
 
         //Listenerの設定
         btn.setOnClickListener(this);
 
         //TextViewの初期化
+        txt01.setText(getString(R.string.text_1, counter));
+    }
+
+    @Override
+    public void onClick(View view){
+        //ボタンを押した時の動作
+        switch (view.getId()){
+            case R.id.button:{
+                counter++;
+                break;
+            }
+        }
+
+        //表示更新
         txt01.setText(getString(R.string.text_1, counter));
     }
 }
