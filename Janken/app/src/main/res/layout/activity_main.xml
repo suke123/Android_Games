@@ -7,9 +7,10 @@
     tools:context="jtp.c.dendai.ac.jp.janken.MainActivity">
 
     <TextView
+        android:id="@+id/text01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/text_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,7 +22,7 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="@string/btn01"
         tools:layout_editor_absoluteY="34dp"
         tools:layout_editor_absoluteX="217dp" />
 
