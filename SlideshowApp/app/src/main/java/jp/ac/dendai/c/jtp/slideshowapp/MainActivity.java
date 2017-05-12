@@ -53,7 +53,7 @@ public class MainActivity extends Activity implements View.OnTouchListener {
                             } else if (firstTouch - x > 50) {
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_right));
-                                viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
+                                viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_left));
                                 viewFlipper.showPrevious();
                             }
                         }
