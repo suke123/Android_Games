@@ -3,37 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context="jp.ac.dendai.c.jtp.slideshowapp.MainActivity">
 
     <ViewFlipper
         android:id="@+id/flipper"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/layout_first"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageview_first"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/sample1"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/layout_second"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageview_second"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:src="@drawable/sample2"/>
 
         </LinearLayout>
