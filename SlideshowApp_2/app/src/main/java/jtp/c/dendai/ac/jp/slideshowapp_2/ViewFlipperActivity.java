@@ -34,7 +34,7 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnTou
                 break;
 
             case R.id.stopButton:
-                viewFlipper.stopFlipping();     //スライドショーを手動で停止させる際に必要
+                viewFlipper.stopFlipping();     //スライドショーを終了する際に必要
                 break;
 
             default:
