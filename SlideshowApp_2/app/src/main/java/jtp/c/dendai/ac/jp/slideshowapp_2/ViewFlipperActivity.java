@@ -53,7 +53,7 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnTou
         float dy = Math.abs(velocityY);
 
         //指の移動方向(縦横)及び距離の判定
-        if (dx > dy && dx > 300) {
+        if (dx > dy && dx > 300) {              //指が横方向に動く＆300px以上動く
             //指の移動方向(左右)の判定
             if(e1.getX() < e2.getX()){
                 viewFlipper.showPrevious();
