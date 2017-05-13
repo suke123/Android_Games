@@ -22,19 +22,19 @@ public class ViewFlipperActivity extends AppCompatActivity implements View.OnTou
     public void onClick(View v){
         switch (v.getId()){
             case R.id.startButton:
-                viewFlipper.startFlipping();
+                viewFlipper.startFlipping();    //スライドショーを手動で開始する際に必要
                 break;
 
             case R.id.prevButton:
-                viewFlipper.showPrevious();
+                viewFlipper.showPrevious();     //前の画像を表示する
                 break;
 
             case R.id.nextButton:
-                viewFlipper.showNext();
+                viewFlipper.showNext();         //次の画像を表示する
                 break;
 
             case R.id.stopButton:
-                viewFlipper.stopFlipping();
+                viewFlipper.stopFlipping();     //スライドショーを手動で停止させる際に必要
                 break;
 
             default:
