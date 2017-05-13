@@ -2,17 +2,11 @@ package jp.ac.dendai.c.jtp.slideshowapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
-
-import java.io.IOException;
-import java.io.InputStream;
 
 public class MainActivity extends Activity implements View.OnTouchListener {
 
