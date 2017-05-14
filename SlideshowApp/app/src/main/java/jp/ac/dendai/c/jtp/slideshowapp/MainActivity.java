@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean isFlip = false;
     private ImageView firstImageView;
     private ImageView secondImageView;
-    private File dir = new File(¥Users¥taka¥Android_Games¥SlideshowApp¥app¥src¥main¥res¥drawable);
+
+    File dir = new File("¥Users¥taka¥Android_Games¥SlideshowApp¥app¥src¥main¥res¥drawable");
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
