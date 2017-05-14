@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import java.io.File;
+import java.io.StringReader;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
@@ -20,8 +21,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private ImageView secondImageView;
     private TextView textView;
 
-    File dir = new File("¥Users¥taka¥Android_Games¥SlideshowApp¥app¥src¥main¥res¥drawable");
-    File[] files = dir.listFiles();
+    File dir = new File("¥¥Users¥¥taka¥¥Android_Games¥¥SlideshowApp¥¥app¥¥src¥¥main¥¥res¥¥drawable¥¥");
+    String[] files = dir.list();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
         firstImageView = (ImageView) findViewById(R.id.imageview_first);
         secondImageView = (ImageView) findViewById(R.id.imageview_second);
-        textView=(TextView)findViewById(R.id.textView);
+        textView = (TextView) findViewById(R.id.textView);
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
         textView.setText(files.length);
