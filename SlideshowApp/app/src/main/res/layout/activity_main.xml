@@ -22,7 +22,7 @@
                 android:id="@+id/imageview_first"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/sample1"/>
+                android:src="@drawable/sample1" />
 
         </LinearLayout>
 
@@ -35,7 +35,7 @@
                 android:id="@+id/imageview_second"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/sample2"/>
+                android:src="@drawable/sample2" />
 
         </LinearLayout>
 
