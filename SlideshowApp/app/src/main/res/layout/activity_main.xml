@@ -19,10 +19,16 @@
             android:layout_height="match_parent"
             android:weightSum="1">
 
+            <ImageButton
+                android:id="@+id/startButton"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                app:srcCompat="@android:drawable/ic_media_play" />
+
             <ImageView
                 android:id="@+id/imageview_first"
                 android:layout_width="wrap_content"
-                android:layout_height="389dp"
+                android:layout_height="match_parent"
                 android:src="@drawable/sample1" />
 
         </LinearLayout>
@@ -39,12 +45,6 @@
                 android:src="@drawable/sample2" />
 
         </LinearLayout>
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="77dp"
-            app:srcCompat="@android:drawable/ic_media_play" />
         -->
 
     </ViewFlipper>
