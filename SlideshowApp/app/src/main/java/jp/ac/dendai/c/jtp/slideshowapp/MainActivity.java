@@ -6,6 +6,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import java.io.File;
@@ -17,8 +18,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean isFlip = false;
     private ImageView firstImageView;
     private ImageView secondImageView;
+    private TextView textView;
 
     File dir = new File("¥Users¥taka¥Android_Games¥SlideshowApp¥app¥src¥main¥res¥drawable");
+    File[] files = dir.listFiles();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -27,8 +30,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
         firstImageView = (ImageView) findViewById(R.id.imageview_first);
         secondImageView = (ImageView) findViewById(R.id.imageview_second);
+        textView=(TextView)findViewById(R.id.textView);
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
+        textView.setText(files.length);
     }
 
     @Override

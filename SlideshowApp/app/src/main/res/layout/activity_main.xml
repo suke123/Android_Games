@@ -25,6 +25,12 @@
                 android:layout_height="74dp"
                 app:srcCompat="@android:drawable/ic_media_play" />
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" />
+
             <ImageView
                 android:id="@+id/imageview_first"
                 android:layout_width="wrap_content"
@@ -41,17 +47,11 @@
             <ImageView
                 android:id="@+id/imageview_second"
                 android:layout_width="match_parent"
-                android:layout_height="389dp"
+                android:layout_height="match_parent"
                 android:src="@drawable/sample2" />
 
         </LinearLayout>
 
     </ViewFlipper>
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button" />
 
 </LinearLayout>
