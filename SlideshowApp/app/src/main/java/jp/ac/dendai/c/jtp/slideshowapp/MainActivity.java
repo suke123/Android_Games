@@ -8,6 +8,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import java.io.File;
+
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
 
     private ViewFlipper viewFlipper;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean isFlip = false;
     private ImageView firstImageView;
     private ImageView secondImageView;
+    private File dir = new File(¥Users¥taka¥Android_Games¥SlideshowApp¥app¥src¥main¥res¥drawable);
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
