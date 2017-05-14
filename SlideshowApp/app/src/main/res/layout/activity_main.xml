@@ -16,12 +16,13 @@
         <LinearLayout
             android:id="@+id/layout_first"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:weightSum="1">
 
             <ImageView
                 android:id="@+id/imageview_first"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="389dp"
                 android:src="@drawable/sample1" />
 
         </LinearLayout>
@@ -34,12 +35,24 @@
             <ImageView
                 android:id="@+id/imageview_second"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="389dp"
                 android:src="@drawable/sample2" />
 
         </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="77dp"
+            app:srcCompat="@android:drawable/ic_media_play" />
         -->
 
     </ViewFlipper>
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button" />
 
 </LinearLayout>
