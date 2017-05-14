@@ -38,6 +38,7 @@
                 android:src="@drawable/sample2" />
 
         </LinearLayout>
+        -->
 
     </ViewFlipper>
 
