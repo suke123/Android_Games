@@ -19,10 +19,10 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean isFlip = false;
     private ImageView firstImageView;
     private ImageView secondImageView;
-    TextView textView;
+//    TextView textView;
 
-    File dir = new File("/Android_Games/SlideshowApp/app/src/main/res/drawable/");
-    File[] files = dir.listFiles();
+//    File dir = new File("/Users/taka/Android_Games/SlideshowApp/app/src/main/res/drawable/");
+//    File[] files = dir.listFiles();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
         firstImageView = (ImageView) findViewById(R.id.imageview_first);
         secondImageView = (ImageView) findViewById(R.id.imageview_second);
-        textView = (TextView) findViewById(R.id.textView);
+//        textView = (TextView) findViewById(R.id.textView);
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
     }
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
-                                textView.setText(files.length);
+//                                textView.setText(files.length);
                                 viewFlipper.showNext();
                             } else if (firstTouch - x > 50) {
                                 isFlip = true;
