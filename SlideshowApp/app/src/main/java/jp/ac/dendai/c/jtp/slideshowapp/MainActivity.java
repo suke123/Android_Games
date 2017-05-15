@@ -1,5 +1,6 @@
 package jp.ac.dendai.c.jtp.slideshowapp;
 
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -29,9 +30,15 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
-        firstImageView = (ImageView) findViewById(R.id.imageview_first);
-        secondImageView = (ImageView) findViewById(R.id.imageview_second);
+//        firstImageView = (ImageView) findViewById(R.id.imageview_first);
+//        secondImageView = (ImageView) findViewById(R.id.imageview_second);
 //        textView = (TextView) findViewById(R.id.textView);
+
+        /*for (int i = 0; i < 5; i++) {
+            int rid = getResources().getIdentifier("sample" + i, "drawable", getApplicationContext().getPackageName());
+            [i] = BitmapFactory.decodeResource(res, rid);
+        }*/
+
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
     }
