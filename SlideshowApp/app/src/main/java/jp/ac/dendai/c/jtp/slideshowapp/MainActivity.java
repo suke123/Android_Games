@@ -1,5 +1,6 @@
 package jp.ac.dendai.c.jtp.slideshowapp;
 
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean isFlip = false;
     private ImageView firstImageView;
     private ImageView secondImageView;
+    Bitmap bitmap[];
 //    TextView textView;
 
 //    File dir = new File("/Users/taka/Android_Games/SlideshowApp/app/src/main/res/drawable/");
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         /*for (int i = 0; i < 5; i++) {
             int rid = getResources().getIdentifier("sample" + i, "drawable", getApplicationContext().getPackageName());
-            [i] = BitmapFactory.decodeResource(res, rid);
-        }*/
+            bitmap[i] = BitmapFactory.decodeResource(res, rid);
+        }*/s
 
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
