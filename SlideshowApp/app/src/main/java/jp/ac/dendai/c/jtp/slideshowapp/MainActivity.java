@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private ImageView secondImageView;
     TextView textView;
 
-    File dir = new File("¥¥Users¥¥taka¥¥Android_Games¥¥SlideshowApp¥¥app¥¥src¥¥main¥¥res¥¥drawable¥¥");
+    File dir = new File("¥¥Users¥¥taka¥¥Android_Games¥¥SlideshowApp¥¥app¥¥src¥¥main¥¥res¥¥drawable");
     String[] files = dir.list();
 
     @Override
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
-                                textView.setText("{files.length}");
+                                textView.setText(files.length);
                                 viewFlipper.showNext();
                             } else if (firstTouch - x > 50) {
                                 isFlip = true;
