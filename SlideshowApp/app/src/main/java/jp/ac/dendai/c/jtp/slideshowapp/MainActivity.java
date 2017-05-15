@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         textView = (TextView) findViewById(R.id.textView);
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
-        textView.setText(files.length);
     }
 
     @Override
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
+                                textView.setText(files.length);
                                 viewFlipper.showNext();
                             } else if (firstTouch - x > 50) {
                                 isFlip = true;
