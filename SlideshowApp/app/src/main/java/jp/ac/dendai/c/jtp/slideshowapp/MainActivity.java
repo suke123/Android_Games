@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private ImageView secondImageView;
     TextView textView;
 
-    File dir = new File("¥¥Users¥¥taka¥¥Android_Games¥¥SlideshowApp¥¥app¥¥src¥¥main¥¥res¥¥drawable");
+    File dir = new File("¥Users¥taka¥Android_Games¥SlideshowApp¥app¥src¥main¥res¥drawable");
     String[] files = dir.list();
 
     @Override
