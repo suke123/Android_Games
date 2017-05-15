@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">SlideshowApp</string>
-    <string name="textView">%1$d</string>
+    <string name="textView">%d</string>
 </resources>
