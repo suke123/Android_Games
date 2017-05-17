@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.ViewFlipper;
@@ -22,12 +24,16 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private boolean isFlip = false;
     private ImageView firstImageView;
     private ImageView secondImageView;
+    Button[] btn = new Button[2];
+    ImageButton[] ibtn = new ImageButton[2];
+    boolean isTouched = false;
+
     Bitmap bitmap[];
     TextView textView;
-    String pathName = "¥¥Android_Games¥¥SlideshowApp¥¥app¥¥src¥¥main¥¥res¥¥drawable¥¥";
+    //String pathName = getPath();
 
-    File dir = new File(pathName);
-    File[] files = dir.listFiles();
+    //File dir = new File(pathName);
+    //File[] files = dir.listFiles();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,8 +42,11 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
         firstImageView = (ImageView) findViewById(R.id.imageview_first);
         secondImageView = (ImageView) findViewById(R.id.imageview_second);
-        textView = (TextView) findViewById(R.id.textView);
-        Resources res = getResources();
+        //setImage();
+        //firstImageView.setImageResource(this.getResources().getIdentifier(&quot;img&quot;+));
+        setButtonID();
+//        textView = (TextView) findViewById(R.id.textView);
+        //Resources res = getResources();
 
         /*for (int i = 0; i < 5; i++) {
             int rid = getResources().getIdentifier("sample" + i, "drawable", getApplicationContext().getPackageName());
@@ -46,11 +55,35 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         findViewById(R.id.layout_first).setOnTouchListener(this);
         findViewById(R.id.layout_second).setOnTouchListener(this);
+
+    }
+
+    /*private void setImage() {
+        for(int i = 0;i<5;i++){
+            firstImageView.setImageResource(this.getResources().getIdentifier(&quot;img&quot;+String.valueOf(i),&quot:drawable&quot;,&quot;jp.ac.dendai.c.jtp.slideshowapp&quout));
+        }
+    }*/
+
+    private void setButtonID() {
+        btn[0] = (Button) findViewById(R.id.prevButton);
+        btn[1] = (Button) findViewById(R.id.nextButton);
+        ibtn[0] = (ImageButton) findViewById(R.id.stopButton);
+        ibtn[1] = (ImageButton) findViewById(R.id.startButton);
+
+        for (int i = 0; i < btn.length; i++) {
+            btn[i].setOnTouchListener(this);
+        }
+
+        for (int i = 0; i < ibtn.length; i++) {
+            ibtn[i].setOnTouchListener(this);
+        }
     }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+        //isImageTouched();
         int x = (int) event.getRawX();
+        //imageVisibility();
         switch (v.getId()) {
             case R.id.layout_first:
             case R.id.layout_second:
@@ -63,13 +96,13 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                             if (x - firstTouch > 50) {
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
-                                viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
-                                textView.setText(files.length);
+                                //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
+//                                textView.setText(files.length);
                                 viewFlipper.showNext();
                             } else if (firstTouch - x > 50) {
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_right));
-                                viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_left));
+                                //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_left));
                                 viewFlipper.showPrevious();
                             }
                         }
@@ -82,4 +115,31 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         return false;
     }
+
+    /*private void isImageTouched() {
+        if (!isTouched) {
+            isTouched = true;
+        } else {
+            isTouched = false;
+        }
+    }*/
+
+    /*private void imageVisibility() {
+        if (btn[0].getVisibility() != View.VISIBLE) {
+            for (int i = 0; i < btn.length; i++) {
+                btn[i].setVisibility(View.VISIBLE);
+                ibtn[i].setVisibility(View.VISIBLE);
+            }
+        } else {
+            for (int i = 0; i < btn.length; i++) {
+                btn[i].setVisibility(View.INVISIBLE);
+                ibtn[i].setVisibility(View.INVISIBLE);
+            }
+        }
+    }*/
+
+    /*@Override
+    public boolean isTouchButton(View.v, MotionEvent event) {
+
+    }*/
 }
