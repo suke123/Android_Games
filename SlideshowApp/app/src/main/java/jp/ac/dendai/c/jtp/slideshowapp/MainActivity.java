@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
-        firstImageView = (ImageView) findViewById(R.id.imageview_first);
-        secondImageView = (ImageView) findViewById(R.id.imageview_second);
-        //setImage();
+        //firstImageView = (ImageView) findViewById(R.id.imageview_first);
+        //secondImageView = (ImageView) findViewById(R.id.imageview_second);
+        setImageId();
         //firstImageView.setImageResource(this.getResources().getIdentifier(&quot;img&quot;+));
         setButtonID();
 //        textView = (TextView) findViewById(R.id.textView);
@@ -58,11 +58,16 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     }
 
-    /*private void setImage() {
-        for(int i = 0;i<5;i++){
-            firstImageView.setImageResource(this.getResources().getIdentifier(&quot;img&quot;+String.valueOf(i),&quot:drawable&quot;,&quot;jp.ac.dendai.c.jtp.slideshowapp&quout));
+    private void setImageId() {
+        for (int i = 0; i < 5; i++) {
+            int viewId = getResources().getIdentifier("iv" + (i + 1), "id", getPackageName());
+            ImageView iv = (ImageView) findViewById(viewId);
+
+            int imageId = getResources().getIdentifier("sample" + (i + 1), "drawable", getPackageName());
+            iv.setImageResource(imageId);
+
         }
-    }*/
+    }
 
     private void setButtonID() {
         btn[0] = (Button) findViewById(R.id.prevButton);
