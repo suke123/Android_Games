@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private ViewFlipper viewFlipper;
     private float firstTouch;
     private boolean isFlip = false;
+    //private ImageView[] firstImageView;
     private ImageView firstImageView;
     private ImageView secondImageView;
     Button[] btn = new Button[2];
@@ -40,9 +41,9 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewFlipper = (ViewFlipper) findViewById(R.id.flipper);
-        //firstImageView = (ImageView) findViewById(R.id.imageview_first);
-        //secondImageView = (ImageView) findViewById(R.id.imageview_second);
-        setImageId();
+        firstImageView = (ImageView) findViewById(R.id.imageview_first);
+        secondImageView = (ImageView) findViewById(R.id.imageview_second);
+        //setImageId(firstImageView);
         //firstImageView.setImageResource(this.getResources().getIdentifier(&quot;img&quot;+));
         setButtonID();
 //        textView = (TextView) findViewById(R.id.textView);
@@ -58,16 +59,17 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
     }
 
-    private void setImageId() {
-        for (int i = 0; i < 5; i++) {
-            int viewId = getResources().getIdentifier("iv" + (i + 1), "id", getPackageName());
-            ImageView iv = (ImageView) findViewById(viewId);
+
+    /*private void setImageId(ImageView[] iv) {
+        for (int i = 0; i < 3; i++) {
+            int viewId = getResources().getIdentifier("iv" + (i + 1), "drawable", getPackageName());
+            iv[i] = (ImageView) findViewById(R.id.imageview_first);
 
             int imageId = getResources().getIdentifier("sample" + (i + 1), "drawable", getPackageName());
-            iv.setImageResource(imageId);
+            iv[i].setImageResource(imageId);
 
         }
-    }
+    }*/
 
     private void setButtonID() {
         btn[0] = (Button) findViewById(R.id.prevButton);
