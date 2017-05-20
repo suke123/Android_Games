@@ -8,7 +8,7 @@
     tools:context="jtp.c.dendai.ac.jp.slideshowapp_3.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/slideshow_imageview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
