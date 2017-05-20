@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     Field[] fields;
     boolean isClick = false;
-    TextView fieldsText;
+    TextView fieldText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setTextView() {
-        fieldsText = (TextView) findViewById(R.id.fieldsText);
+        fieldText = (TextView) findViewById(R.id.fieldsText);
     }
 
     /*private void setButtonId() {
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = field.getName();
                 //フィールドの値を取得する
                 int value = (Integer) field.get(name);
-                fieldsText.setText(name);
+                fieldText.setText(name);
                 //画像読み込み
                 imageView.setImageResource(value);
 
