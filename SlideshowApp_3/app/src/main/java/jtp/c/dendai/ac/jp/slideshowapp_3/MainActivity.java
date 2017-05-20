@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,6 +12,8 @@ import java.lang.reflect.Field;
 
 public class MainActivity extends AppCompatActivity implements View.OnTouchListener{
 
+    ImageButton startButton;
+    ImageButton stopButton;
     ImageView imageView;
     Field[] fields;
     boolean isClick = false;
@@ -22,8 +25,14 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         setImageView();         //ImageViewを
         getImageResources();    //画像リソース取得
         readImageResources();   //画像リソース読み込みyomikomi
+        setButtonId();
         //TextView tv = (TextView)findViewById(R.id.text_view);
 
+    }
+
+    private void setButtonId() {
+        startButton=(ImageButton)findViewById(R.id.btn_start);
+        stopButton=(ImageButton)findViewById(R.id.btn_stop);
     }
 
     @Override
