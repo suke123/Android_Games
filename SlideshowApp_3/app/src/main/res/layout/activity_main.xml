@@ -7,9 +7,15 @@
     android:layout_height="match_parent"
     tools:context="jtp.c.dendai.ac.jp.slideshowapp_3.MainActivity">
 
-    <ImageView
-        android:id="@+id/slideshow_imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/slideshow_imageview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </ViewFlipper>
 
 </LinearLayout>
