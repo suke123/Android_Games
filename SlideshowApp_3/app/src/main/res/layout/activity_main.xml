@@ -14,7 +14,8 @@
         <ImageView
             android:id="@+id/slideshow_imageview"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:src="@drawable/sample1"/>
 
     </ViewFlipper>
 
