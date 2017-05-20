@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
-public class MainActivity extends AppCompatActivity implements View.OnTouchListener{
+public class MainActivity extends AppCompatActivity {
 
     ImageButton startButton;
     ImageButton stopButton;
@@ -26,6 +26,14 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         getImageResources();    //画像リソース取得
         readImageResources();   //画像リソース読み込みyomikomi
         setButtonId();
+
+        /*startButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(){
+
+            }
+        });*/
+
         //TextView tv = (TextView)findViewById(R.id.text_view);
 
     }
@@ -35,11 +43,11 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         stopButton=(ImageButton)findViewById(R.id.btn_stop);
     }
 
-    @Override
+    /*@Override
     public boolean onTouch(View v, MotionEvent event){
 
         return false;
-    }
+    }*/
 
     private void readImageResources() {
         for (Field field : fields) {
