@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         setImageView();         //ImageViewを
         getImageResources();    //画像リソース取得
         readImageResources();   //画像リソース読み込みyomikomi
-        setButtonId();
+        //setButtonId();
         setTextView();
 
         /*startButton.setOnClickListener(new View.OnClickListener(){
@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity {
         fieldsText = (TextView) findViewById(R.id.fieldsText);
     }
 
-    private void setButtonId() {
+    /*private void setButtonId() {
         startButton = (ImageButton) findViewById(R.id.btn_start);
         stopButton = (ImageButton) findViewById(R.id.btn_stop);
-    }
+    }*/
 
     /*@Override
     public boolean onTouch(View v, MotionEvent event){
