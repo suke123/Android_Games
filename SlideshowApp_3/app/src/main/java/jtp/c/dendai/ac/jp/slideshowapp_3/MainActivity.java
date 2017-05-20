@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setImageView();         //ImageViewを
         getImageResources();    //画像リソース取得
         //TextView tv = (TextView)findViewById(R.id.text_view);
 
@@ -32,7 +31,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         //isImageTouched();
-        readImageResources();   //画像リソース読み込み
         int x = (int) event.getRawX();
         //imageVisibility();
         switch (v.getId()) {
@@ -47,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                             if (x - firstTouch > 50) {
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
+                                readImageResources();   //画像リソース読み込み
+                                setImageView();         //ImageViewを
                                 //readImageResources();   //画像リソース読み込み
                                 //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
 //                                textView.setText(files.length);
@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                             } else if (firstTouch - x > 50) {
                                 isFlip = true;
                                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_right));
+                                readImageResources();   //画像リソース読み込み
+                                setImageView();         //ImageViewを
                                 //readImageResources();   //画像リソース読み込み
                                 //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_left));
                                 viewFlipper.showPrevious();
