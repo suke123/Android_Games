@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     Field[] fields;
     boolean isClick = false;
+    TextView fieldsText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         getImageResources();    //画像リソース取得
         readImageResources();   //画像リソース読み込みyomikomi
         setButtonId();
+        setextView();
 
         /*startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -38,9 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setextView() {
+        fieldsText = (TextView) findViewById(R.id.fieldsText);
+    }
+
     private void setButtonId() {
-        startButton=(ImageButton)findViewById(R.id.btn_start);
-        stopButton=(ImageButton)findViewById(R.id.btn_stop);
+        startButton = (ImageButton) findViewById(R.id.btn_start);
+        stopButton = (ImageButton) findViewById(R.id.btn_stop);
     }
 
     /*@Override
@@ -73,5 +79,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void getImageResources() {
         fields = R.drawable.class.getFields();
+
     }
 }
