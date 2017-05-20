@@ -16,13 +16,14 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private ViewFlipper viewFlipper;
     private float firstTouch;
     private boolean isFlip = false;
-    private ImageView imageView;
+    ImageView imageView;
     Field[] fields;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setImageView();         //ImageViewを
         getImageResources();    //画像リソース取得
         //TextView tv = (TextView)findViewById(R.id.text_view);
 
@@ -32,7 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     public boolean onTouch(View v, MotionEvent event) {
         //isImageTouched();
         readImageResources();   //画像リソース読み込み
-        setImageView();         //ImageViewを
         int x = (int) event.getRawX();
         //imageVisibility();
         switch (v.getId()) {
@@ -46,9 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                         if (!isFlip) {
                             if (x - firstTouch > 50) {
                                 isFlip = true;
-                                imageView.setImageResource(R.drawable.sample2);
-                                setImageView();
-                                //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
+                                viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_in_left));
                                 //readImageResources();   //画像リソース読み込み
                                 //viewFlipper.setInAnimation(AnimationUtils.loadAnimation(this, R.anim.move_out_right));
 //                                textView.setText(files.length);
