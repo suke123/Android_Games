@@ -34,9 +34,9 @@ public class MainActivity extends AppCompatActivity {
                 //画像読み込み
                 imageView.setImageResource(value);
 
-            }catch (IllegalArgumentException e){
+            } catch (IllegalArgumentException e) {
                 e.printStackTrace();
-            }catch (IllegalAccessException e){
+            } catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
