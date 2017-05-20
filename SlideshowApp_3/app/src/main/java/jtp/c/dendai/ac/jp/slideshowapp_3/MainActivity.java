@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         getImageResources();    //画像リソース取得
         readImageResources();   //画像リソース読み込みyomikomi
         setButtonId();
-        setextView();
+        setTextView();
 
         /*startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void setextView() {
+    private void setTextView() {
         fieldsText = (TextView) findViewById(R.id.fieldsText);
     }
 
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = field.getName();
                 //フィールドの値を取得する
                 int value = (Integer) field.get(name);
+                fieldsText.setText(name);
                 //画像読み込み
                 imageView.setImageResource(value);
 
@@ -79,6 +80,5 @@ public class MainActivity extends AppCompatActivity {
 
     private void getImageResources() {
         fields = R.drawable.class.getFields();
-
     }
 }
