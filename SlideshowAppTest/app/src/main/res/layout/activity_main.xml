@@ -44,58 +44,57 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:weightSum="1"
+        android:gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout2">
+        android:layout_alignParentStart="true">
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-
+            android:layout_weight="0.16"
             android:clickable="false"
-            android:text="PREVIOUS" />
+            android:text="PREVIOUS"
+            android:textSize="20dp" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@android:drawable/ic_media_play"
-            android:layout_alignParentBottom="true"
-            android:layout_toRightOf="@+id/button"
-            android:layout_toEndOf="@+id/button" />
-<!--
-        <ToggleButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="SLIDESHOW"
-            android:id="@+id/toggleButton"
-            android:allowUndo="false"
-            android:checked="false"
-            android:clickable="false"
-            android:contextClickable="false"
-            android:enabled="true"
-            android:focusable="false"
-            android:longClickable="false"
-            android:textOn="Stop"
-            android:textOff="Slideshow"
-            android:textColor="#c0c0c0"
-            android:background="#14ffffff"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
-            -->
+            android:layout_height="65dp"
+            android:layout_weight="0.24"
+            app:srcCompat="@android:drawable/ic_media_play" />
+        <!--
+                <ToggleButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SLIDESHOW"
+                    android:id="@+id/toggleButton"
+                    android:allowUndo="false"
+                    android:checked="false"
+                    android:clickable="false"
+                    android:contextClickable="false"
+                    android:enabled="true"
+                    android:focusable="false"
+                    android:longClickable="false"
+                    android:textOn="Stop"
+                    android:textOff="Slideshow"
+                    android:textColor="#c0c0c0"
+                    android:background="#14ffffff"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+                    -->
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/image_view"
-            android:layout_toLeftOf="@+id/button2"
-            android:layout_toStartOf="@+id/button2"
+            android:layout_height="65dp"
+            android:layout_weight="0.23"
             app:srcCompat="@android:drawable/ic_media_pause" />
 
         <Button
@@ -106,7 +105,9 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_gravity="bottom"
-            android:text="NEXT" />
+            android:text="NEXT"
+            android:textSize="20dp"
+            android:layout_weight="0.23" />
 
     </LinearLayout>
 
