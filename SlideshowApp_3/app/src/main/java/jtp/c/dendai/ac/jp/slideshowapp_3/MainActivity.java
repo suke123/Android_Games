@@ -19,14 +19,18 @@ public class MainActivity extends AppCompatActivity {
     Field[] fields;
     //boolean isClick = false;
     TextView fieldText;
+    String imageName = null;
+    int fieldValue=0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setImageView();         //ImageViewを
-        getImageResources();    //画像リソース取得
-        readImageResources();   //画像リソース読み込みyomikomi
+        //getImageResources();    //画像リソース取得
+        //readImageResources();   //画像リソース読み込みyomikomi
+        //setText(imageName);
+        //fieldText.setText(fieldValue);
         //setButtonId();
         setTextView();
 
@@ -56,29 +60,27 @@ public class MainActivity extends AppCompatActivity {
         return false;
     }*/
 
-    private void readImageResources() {
+    /*private void readImageResources() {
         for (Field field : fields) {
             try {
                 //フィールド名取得
-                String name = field.getName();
+                imageName = field.getName();
                 //フィールドの値を取得する
-                int value = (Integer) field.get(name);
-                setText(name);
-                fieldText.setText(value);
+                //fieldValue = (Integer) field.get(imageName);
                 //画像読み込み
                 //imageView.setImageResource(value);
 
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
-            } catch (IllegalAccessException e) {
+            } /*catch (IllegalAccessException e) {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 
     public void setText(String name) {
         if(name == null){
-            fieldText.setText("name is null !!");
+            fieldText.setText(null);
         }else{
             fieldText.setText(name);
         }
