@@ -38,6 +38,8 @@ public class Slideshow {
         activity = a;
         handler = new Handler();
         View.OnClickListener myListener = new MyListener();
+
+        //Button, ImageButton, ImageView, TextViewのIDを設定
         prev_btn = (Button) a.findViewById(R.id.button);
         start_btn = (ImageButton) a.findViewById(R.id.imageButton);
         stop_btn = (ImageButton) a.findViewById(R.id.imageButton2);
@@ -76,6 +78,8 @@ public class Slideshow {
         }
     }
 
+    //TimerTask:一定時間に同じ処理を繰り返す
+    //Startボタンを押された時の処理を行うクラス
     public class SlideTimerTask extends TimerTask {
         @Override
         public void run() {
