@@ -40,67 +40,71 @@
         android:layout_above="@+id/button" />
 
     <LinearLayout
-        android:
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"></LinearLayout>
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_gravity="bottom|center_horizontal"
-        android:clickable="false"
-        android:text="PREVIOUS"
-        android:textColor="#c0c0c0" />
+        android:layout_height="wrap_content">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/ic_media_play"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button"
-        android:layout_toEndOf="@+id/button" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_gravity="bottom|center_horizontal"
+            android:clickable="false"
+            android:text="PREVIOUS"
+            android:textColor="#c0c0c0" />
 
-    <ToggleButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SLIDESHOW"
-        android:id="@+id/toggleButton"
-        android:allowUndo="false"
-        android:checked="false"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:enabled="true"
-        android:focusable="false"
-        android:longClickable="false"
-        android:textOn="Stop"
-        android:textOff="Slideshow"
-        android:textColor="#c0c0c0"
-        android:background="#14ffffff"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_media_play"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/button"
+            android:layout_toEndOf="@+id/button" />
+<!--
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SLIDESHOW"
+            android:id="@+id/toggleButton"
+            android:allowUndo="false"
+            android:checked="false"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:enabled="true"
+            android:focusable="false"
+            android:longClickable="false"
+            android:textOn="Stop"
+            android:textOff="Slideshow"
+            android:textColor="#c0c0c0"
+            android:background="#14ffffff"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+            -->
 
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/image_view"
-        android:layout_toLeftOf="@+id/button2"
-        android:layout_toStartOf="@+id/button2"
-        app:srcCompat="@android:drawable/ic_media_pause" />
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_view"
+            android:layout_toLeftOf="@+id/button2"
+            android:layout_toStartOf="@+id/button2"
+            app:srcCompat="@android:drawable/ic_media_pause" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_gravity="bottom"
-        android:text="NEXT"
-        android:textColor="#c0c0c0" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="bottom"
+            android:text="NEXT"
+            android:textColor="#c0c0c0" />
+
+    </LinearLayout>
 
 </RelativeLayout>

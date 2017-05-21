@@ -99,7 +99,7 @@ public class Slideshow {
                     }
                     break;
 
-                case R.id.toggleButton:
+                case R.id.imageButton:
                     if (j == 0) {
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();
@@ -107,10 +107,12 @@ public class Slideshow {
                         j++;
                     } else {
                         j--;
-                        slideTimerTask.cancel();
-                        slideTimerTask = null;
                     }
                     break;
+
+                case R.id.imageButton2:
+                    slideTimerTask.cancel();
+                    slideTimerTask = null;
 
                 case R.id.button2:
                     if (i < files.length - 1) {
