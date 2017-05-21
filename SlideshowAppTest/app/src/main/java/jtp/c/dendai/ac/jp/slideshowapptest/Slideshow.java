@@ -23,9 +23,9 @@ import android.widget.TextView;
 
 public class Slideshow {
     private int i, j = 0;
-    private String[] files;
-    private Button prev_btn, slideshow_btn, next_btn;
-    private ImageButton start_btn, stop_btn;
+    private String[] files;                     //画像ファイル格納
+    private Button prev_btn, next_btn;          //
+    private ImageButton start_btn, stop_btn;    //
     private ImageView image;
     private TextView textView, textView2;
     private Timer timer;
