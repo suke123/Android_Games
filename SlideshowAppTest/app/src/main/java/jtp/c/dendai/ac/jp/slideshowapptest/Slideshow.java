@@ -67,6 +67,7 @@ public class Slideshow {
         //textView2.setText(files[i]);
         try {
             //assetsフォルダ内のpicturesフォルダの画像を読み込み、ImageViewに表示させる
+            //getAssets で AssetManager を取得し、open メソッドで画像の InputStream を開く
             InputStream istream = activity.getResources().getAssets().open("pictures/" + files[i]);
             Bitmap bitmap = BitmapFactory.decodeStream(istream);
             imageView.setImageBitmap(bitmap);
