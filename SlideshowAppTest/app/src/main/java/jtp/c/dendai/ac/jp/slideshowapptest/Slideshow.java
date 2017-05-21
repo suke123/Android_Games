@@ -22,8 +22,8 @@ import android.widget.TextView;
 public class Slideshow {
     private int i,j = 0;
     private String[] files;
-    private Button previous_button,slideshow_button,next_button;
-    private ImageView picture;
+    private Button prev_btn,slideshow_btn,next_btn;
+    private ImageView image;
     private TextView textView,textView2;
     private Timer timer;
     private SlideTimerTask slideTimerTask;
@@ -35,13 +35,13 @@ public class Slideshow {
         activity = a;
         handler = new Handler();
         View.OnClickListener myListener = new MyListener();
-        previous_button=(Button) a.findViewById(R.id.button);
-        slideshow_button=(Button) a.findViewById(R.id.toggleButton);
-        next_button=(Button) a.findViewById(R.id.button2);
-        previous_button.setOnClickListener(myListener);
-        slideshow_button.setOnClickListener(myListener);
-        next_button.setOnClickListener(myListener);
-        picture = (ImageView) a.findViewById(R.id.image_view);
+        prev_btn=(Button) a.findViewById(R.id.button);
+        slideshow_btn=(Button) a.findViewById(R.id.toggleButton);
+        next_btn=(Button) a.findViewById(R.id.button2);
+        prev_btn.setOnClickListener(myListener);
+        slideshow_btn.setOnClickListener(myListener);
+        next_btn.setOnClickListener(myListener);
+        image = (ImageView) a.findViewById(R.id.image_view);
         textView = (TextView) a.findViewById(R.id.textView);
         textView2 = (TextView) a.findViewById(R.id.textView2);
     }
@@ -61,7 +61,7 @@ public class Slideshow {
         try {
             InputStream istream = activity.getResources().getAssets().open("images/"+files[i]);
             Bitmap bitmap = BitmapFactory.decodeStream(istream);
-            picture.setImageBitmap(bitmap);
+            image.setImageBitmap(bitmap);
         } catch (IOException e) {
             Log.d("Image()","Error");
         }
@@ -72,7 +72,7 @@ public class Slideshow {
         public void run() {
             handler.post( new Runnable() {
                 public void run() {
-                    next_button.performClick();
+                    next_btn.performClick();
                 }
             });
         }
