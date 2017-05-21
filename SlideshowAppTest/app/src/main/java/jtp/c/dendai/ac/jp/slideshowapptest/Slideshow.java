@@ -111,8 +111,10 @@ public class Slideshow {
                     break;
 
                 case R.id.imageButton2:
+                    j--;
                     slideTimerTask.cancel();
                     slideTimerTask = null;
+                    break;
 
                 case R.id.button2:
                     if (i < files.length - 1) {
