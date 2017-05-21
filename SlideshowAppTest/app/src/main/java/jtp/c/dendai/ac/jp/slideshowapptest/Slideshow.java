@@ -39,12 +39,12 @@ public class Slideshow {
         handler = new Handler();
         View.OnClickListener myListener = new MyListener();
         prev_btn = (Button) a.findViewById(R.id.button);
-        slideshow_btn = (Button) a.findViewById(R.id.toggleButton);
+        //slideshow_btn = (Button) a.findViewById(R.id.toggleButton);
         start_btn = (ImageButton) a.findViewById(R.id.imageButton);
         stop_btn = (ImageButton) a.findViewById(R.id.imageButton2);
         next_btn = (Button) a.findViewById(R.id.button2);
         prev_btn.setOnClickListener(myListener);
-        slideshow_btn.setOnClickListener(myListener);
+        //slideshow_btn.setOnClickListener(myListener);
         start_btn.setOnClickListener(myListener);
         stop_btn.setOnClickListener(myListener);
         next_btn.setOnClickListener(myListener);
