@@ -79,7 +79,7 @@ public class Slideshow {
         public void run() {
             handler.post(new Runnable() {
                 public void run() {
-                    next_btn.performClick();
+                    next_btn.performClick();    //performClick():ボタンを押さずにonClickイベントを発生
                 }
             });
         }
@@ -103,7 +103,7 @@ public class Slideshow {
                     if (j == 0) {
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();
-                        timer.schedule(slideTimerTask, 2000, 2000);
+                        timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
                         j++;
                     } else {
                         j--;
