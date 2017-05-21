@@ -38,7 +38,6 @@ public class Slideshow {
         activity = a;
         handler = new Handler();
         View.OnClickListener myListener = new MyListener();
-        setButtonId();
         prev_btn = (Button) a.findViewById(R.id.button);
         start_btn = (ImageButton) a.findViewById(R.id.imageButton);
         stop_btn = (ImageButton) a.findViewById(R.id.imageButton2);
@@ -52,6 +51,7 @@ public class Slideshow {
         //textView2 = (TextView) a.findViewById(R.id.textView2);
     }
 
+    //assetsの中の
     public void Fine_Dir_Path(String dir) {
         assetManager = activity.getResources().getAssets();
         try {
