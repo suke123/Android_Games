@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void setText(String name) {
+    public void setText(String name) {
         if(name == null){
             fieldText.setText("name is null !!");
         }else{
