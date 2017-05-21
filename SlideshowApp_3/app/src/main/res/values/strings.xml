@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">SlideshowApp_3</string>
-    <string name="fieldsText">%s</string>
+    <string name="fieldText">%s</string>
 </resources>

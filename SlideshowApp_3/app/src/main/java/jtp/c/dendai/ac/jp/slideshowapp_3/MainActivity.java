@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setTextView() {
-        fieldText = (TextView) findViewById(R.id.fieldsText);
+        fieldText = (TextView) findViewById(R.id.fieldText);
     }
 
     /*private void setButtonId() {
@@ -80,11 +80,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void setImageView() {
+    public void setImageView() {
         imageView = (ImageView) findViewById(R.id.slideshow_imageview);
     }
 
-    private void getImageResources() {
+    public void getImageResources() {
         fields = R.drawable.class.getFields();
     }
 }
