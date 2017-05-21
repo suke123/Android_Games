@@ -27,7 +27,7 @@ public class Slideshow {
     private Button prev_btn, next_btn;
     private ImageButton start_btn, stop_btn;
     private ImageView image;
-    private TextView textView, textView2;
+    private TextView textView;
     private Timer timer;
     private SlideTimerTask slideTimerTask;
     private Handler handler;
@@ -39,18 +39,16 @@ public class Slideshow {
         handler = new Handler();
         View.OnClickListener myListener = new MyListener();
         prev_btn = (Button) a.findViewById(R.id.button);
-        //slideshow_btn = (Button) a.findViewById(R.id.toggleButton);
         start_btn = (ImageButton) a.findViewById(R.id.imageButton);
         stop_btn = (ImageButton) a.findViewById(R.id.imageButton2);
         next_btn = (Button) a.findViewById(R.id.button2);
         prev_btn.setOnClickListener(myListener);
-        //slideshow_btn.setOnClickListener(myListener);
         start_btn.setOnClickListener(myListener);
         stop_btn.setOnClickListener(myListener);
         next_btn.setOnClickListener(myListener);
         image = (ImageView) a.findViewById(R.id.image_view);
         textView = (TextView) a.findViewById(R.id.textView);
-        textView2 = (TextView) a.findViewById(R.id.textView2);
+        //textView2 = (TextView) a.findViewById(R.id.textView2);
     }
 
     public void Fine_Dir_Path(String dir) {
@@ -64,7 +62,7 @@ public class Slideshow {
 
     public void Image() {
         textView.setText((i + 1) + " / " + (files.length));
-        textView2.setText(files[i]);
+        //textView2.setText(files[i]);
         try {
             InputStream istream = activity.getResources().getAssets().open("pictures/" + files[i]);
             Bitmap bitmap = BitmapFactory.decodeStream(istream);
