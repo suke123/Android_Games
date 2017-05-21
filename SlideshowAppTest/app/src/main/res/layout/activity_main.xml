@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="jtp.c.dendai.ac.jp.slideshowapptest.MainActivity">
+    android:background="#000000"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="jp.ac.dendai.c.jtp.slideshow.MainActivity">
 
     <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:textColor="#c0c0c0"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentRight="false"
+        android:gravity="center_horizontal"
+        android:background="#14ffffff" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2"
+        android:textColor="#c0c0c0"
+        android:layout_below="@+id/textView"
+        android:layout_gravity="right"
+        android:gravity="right" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:scaleType="fitCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/button" />
+
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="PREVIOUS"
+        android:id="@+id/button"
+        android:layout_gravity="bottom|center_horizontal"
+        android:clickable="false"
+        android:textColor="#c0c0c0"
+        android:background="#14ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</android.support.constraint.ConstraintLayout>
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SLIDESHOW"
+        android:id="@+id/toggleButton"
+        android:allowUndo="false"
+        android:checked="false"
+        android:clickable="false"
+        android:contextClickable="false"
+        android:enabled="true"
+        android:focusable="false"
+        android:longClickable="false"
+        android:textOn="Stop"
+        android:textOff="Slideshow"
+        android:textColor="#c0c0c0"
+        android:background="#14ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NEXT"
+        android:id="@+id/button2"
+        android:layout_gravity="bottom"
+        android:textColor="#c0c0c0"
+        android:background="#14ffffff"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
