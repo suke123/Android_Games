@@ -26,7 +26,7 @@ public class Slideshow {
     private String[] files;
     private Button prev_btn, next_btn;
     private ImageButton start_btn, stop_btn;
-    private ImageView image;
+    private ImageView imageView;
     private TextView textView;
     private Timer timer;
     private SlideTimerTask slideTimerTask;
@@ -46,28 +46,30 @@ public class Slideshow {
         start_btn.setOnClickListener(myListener);
         stop_btn.setOnClickListener(myListener);
         next_btn.setOnClickListener(myListener);
-        image = (ImageView) a.findViewById(R.id.image_view);
+        imageView = (ImageView) a.findViewById(R.id.image_view);
         textView = (TextView) a.findViewById(R.id.textView);
         //textView2 = (TextView) a.findViewById(R.id.textView2);
     }
 
     //assetsの中のpicturesのファイルパスを取得
     public void Fine_Dir_Path(String dir) {
-        assetManager = activity.getResources().getAssets();
+        assetManager = activity.getResources().getAssets();     //assetsフォルダ内のファイルを読み込む
         try {
-            files = assetManager.list(dir);
-        } catch (IOException e) {
+            files = assetManager.list(dir);     //picturesファイルに含まれる全ての子のパスを取得し、String型配列filesに格納する
+        } catch (IOException e) {               //例外処理
             Log.d("Search_path()", "Error");
         }
     }
 
+    //画像を表示させるメソッド
     public void Image() {
-        textView.setText((i + 1) + " / " + (files.length));
+        textView.setText((i + 1) + " / " + (files.length));     //何枚目の画像を表示しているのかを示す
         //textView2.setText(files[i]);
         try {
+            //assetsフォルダ内のpicturesフォルダの画像を読み込み、ImageViewに表示させる
             InputStream istream = activity.getResources().getAssets().open("pictures/" + files[i]);
             Bitmap bitmap = BitmapFactory.decodeStream(istream);
-            image.setImageBitmap(bitmap);
+            imageView.setImageBitmap(bitmap);
         } catch (IOException e) {
             Log.d("Image()", "Error");
         }
