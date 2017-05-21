@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Slideshow slideshow = new Slideshow(this);
-        slideshow.Fine_Dir_Path("images");
+        slideshow.Fine_Dir_Path("pictures");
         slideshow.Image();
     }
 }
