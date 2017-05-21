@@ -62,17 +62,17 @@ public class MainActivity extends AppCompatActivity {
                 //フィールド名取得
                 String name = field.getName();
                 //フィールドの値を取得する
-                //int value = (Integer) field.get(name);
+                int value = (Integer) field.get(name);
                 setText(name);
-                //fieldText.setText(value);
+                fieldText.setText(value);
                 //画像読み込み
                 //imageView.setImageResource(value);
 
             } catch (IllegalArgumentException e) {
                 e.printStackTrace();
-            } /*catch (IllegalAccessException e) {
+            } catch (IllegalAccessException e) {
                 e.printStackTrace();
-            }*/
+            }
         }
     }
 
