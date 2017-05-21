@@ -89,6 +89,7 @@ public class Slideshow {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                //previousボタンの処理
                 case R.id.button:
                     if (i == 0) {
                         i = files.length - 1;
@@ -99,6 +100,7 @@ public class Slideshow {
                     }
                     break;
 
+                //スタートボタンの処理
                 case R.id.imageButton:
                     if (j == 0) {
                         timer = new Timer();
@@ -110,12 +112,14 @@ public class Slideshow {
                     }
                     break;
 
+                //ストップボタンの処理
                 case R.id.imageButton2:
                     j--;
                     slideTimerTask.cancel();
                     slideTimerTask = null;
                     break;
 
+                //NEXTボタンの処理
                 case R.id.button2:
                     if (i < files.length - 1) {
                         i++;
