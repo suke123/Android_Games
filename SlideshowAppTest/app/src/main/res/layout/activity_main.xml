@@ -36,10 +36,9 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/textView2"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
-    <!--
-    android:layout_above="@+id/button" />
--->
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/button" />
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
