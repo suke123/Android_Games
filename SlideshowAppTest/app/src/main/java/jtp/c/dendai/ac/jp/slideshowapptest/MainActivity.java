@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
         //SlideshowクラスのFind_Dir_Pathメソッド呼び出し
         // 引数：画像を入れているassets中のフォルダ名「pictures」
         slideshow.Fine_Dir_Path("pictures");
-        
+
         //SlideshowクラスのImageメソッド呼び出し
         slideshow.Image();
     }
