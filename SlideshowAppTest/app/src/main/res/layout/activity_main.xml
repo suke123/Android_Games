@@ -38,18 +38,20 @@
         android:layout_alignParentRight="true"
         android:scaleType="fitCenter"
         android:layout_above="@+id/linearLayout2"
-        android:layout_below="@+id/textView" />
+        android:layout_below="@+id/textView"
+        android:background="#000000"/>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:gravity="center"
         android:orientation="horizontal"
         android:weightSum="1"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:background="#000000">
 
         <Button
             android:id="@+id/button"
@@ -60,8 +62,7 @@
             android:layout_alignParentStart="true"
             android:layout_weight="0.16"
             android:clickable="false"
-            android:text="PREVIOUS"
-            android:textSize="20dp" />
+            android:text="PREVIOUS" />
 
         <ImageButton
             android:id="@+id/imageButton"
@@ -105,8 +106,7 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_weight="0.23"
-            android:text="NEXT"
-            android:textSize="20dp" />
+            android:text="NEXT" />
 
     </LinearLayout>
 
