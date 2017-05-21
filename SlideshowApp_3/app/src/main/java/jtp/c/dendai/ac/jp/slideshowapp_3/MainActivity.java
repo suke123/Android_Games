@@ -63,11 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 String name = field.getName();
                 //フィールドの値を取得する
                 //int value = (Integer) field.get(name);
-                if(name == null){
-                    fieldText.setText("name is null !!");
-                }else{
-                    fieldText.setText(name);
-                }
+                setText(name);
                 //fieldText.setText(value);
                 //画像読み込み
                 //imageView.setImageResource(value);
@@ -77,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
             } /*catch (IllegalAccessException e) {
                 e.printStackTrace();
             }*/
+        }
+    }
+
+    private void setText(String name) {
+        if(name == null){
+            fieldText.setText("name is null !!");
+        }else{
+            fieldText.setText(name);
         }
     }
 
