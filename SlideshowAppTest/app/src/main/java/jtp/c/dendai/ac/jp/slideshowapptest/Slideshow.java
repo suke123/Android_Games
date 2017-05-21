@@ -66,7 +66,7 @@ public class Slideshow {
         textView.setText((i + 1) + " / " + (files.length));
         textView2.setText(files[i]);
         try {
-            InputStream istream = activity.getResources().getAssets().open("images/" + files[i]);
+            InputStream istream = activity.getResources().getAssets().open("pictures/" + files[i]);
             Bitmap bitmap = BitmapFactory.decodeStream(istream);
             image.setImageBitmap(bitmap);
         } catch (IOException e) {
