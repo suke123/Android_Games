@@ -108,11 +108,11 @@ public class Slideshow {
 
                 //スタートボタンの処理
                 case R.id.imageButton:
-                    if (j == 0) {
+                    if (j == 0) {       //変数jが0の時、スライドショー起動
                         timer = new Timer();
-                        slideTimerTask = new SlideTimerTask();
+                        slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒に1回押されているのと同様の処理を行う
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        j = 1;
+                        j = 1;      //
                     } else {
                         j = 0;
                     }
