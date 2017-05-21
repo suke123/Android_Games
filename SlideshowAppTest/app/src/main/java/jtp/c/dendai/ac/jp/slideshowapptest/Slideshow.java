@@ -103,7 +103,7 @@ public class Slideshow {
                     if (j == 0) {
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();
-                        timer.schedule(slideTimerTask, 1500, 1500);
+                        timer.schedule(slideTimerTask, 2000, 2000);
                         j++;
                     } else {
                         j--;
