@@ -43,7 +43,7 @@
         android:id="@+id/fieldText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/fieldText"
+        android:text="@string/field_Text"
         android:textSize="20dp" />
 
 </LinearLayout>
