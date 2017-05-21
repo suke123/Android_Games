@@ -112,7 +112,7 @@ public class Slideshow {
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        j++;
+                        j=1;
                     } else {
                         j--;
                     }
