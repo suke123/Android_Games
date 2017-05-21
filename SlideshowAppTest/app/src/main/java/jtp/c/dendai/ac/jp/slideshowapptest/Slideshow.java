@@ -51,7 +51,7 @@ public class Slideshow {
         //textView2 = (TextView) a.findViewById(R.id.textView2);
     }
 
-    //assetsの中の
+    //assetsの中のpicturesのファイルパスを取得
     public void Fine_Dir_Path(String dir) {
         assetManager = activity.getResources().getAssets();
         try {
