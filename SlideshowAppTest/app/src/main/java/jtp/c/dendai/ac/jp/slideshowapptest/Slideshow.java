@@ -112,15 +112,15 @@ public class Slideshow {
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        j=1;
+                        j = 1;
                     } else {
-                        j--;
+                        j = 0;
                     }
                     break;
 
                 //ストップボタンの処理
                 case R.id.imageButton2:
-                    j--;
+                    j = 0;
                     slideTimerTask.cancel();
                     slideTimerTask = null;
                     break;
