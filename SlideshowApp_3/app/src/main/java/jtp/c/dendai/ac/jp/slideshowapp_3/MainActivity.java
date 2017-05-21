@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.lang.reflect.Field;
+import java.lang.Integer;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -62,7 +63,11 @@ public class MainActivity extends AppCompatActivity {
                 String name = field.getName();
                 //フィールドの値を取得する
                 //int value = (Integer) field.get(name);
-                fieldText.setText(name);
+                if(name == null){
+                    fieldText.setText("name is null !!");
+                }else{
+                    fieldText.setText(name);
+                }
                 //fieldText.setText(value);
                 //画像読み込み
                 //imageView.setImageResource(value);
