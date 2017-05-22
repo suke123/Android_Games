@@ -83,6 +83,9 @@ public class Slideshow {
     public class SlideTimerTask extends TimerTask {
         @Override
         public void run() {                     //スレッドからUIを操作する
+            //普通別スレッドからwidgetに直接アクセつできないが、Handlerクラスのpostメソッドを使用することで、解決する
+            //widgetの属するスレッドにてHandlerクラスのインスタンスを生成して、このインスタンスの postメソッドの引数に、
+            //widgetにアクセスするコードを記述したRunnableクラスを指定する。
             handler.post(new Runnable() {
                 public void run() {
                     next_btn.performClick();    //performClick():ボタンを押さずにonClickイベントを発生
