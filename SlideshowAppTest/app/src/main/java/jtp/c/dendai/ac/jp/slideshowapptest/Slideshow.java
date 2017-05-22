@@ -22,7 +22,8 @@ import android.widget.TextView;
  */
 
 public class Slideshow {
-    private int i, j = 0;
+    private int i = 0;
+    private boolean isClickStartButton = false;
     private String[] files;
     private Button prev_btn, next_btn;
     private ImageButton start_btn, stop_btn;
@@ -113,20 +114,20 @@ public class Slideshow {
 
                 //スタートボタンの処理
                 case R.id.startButton:
-                    if (j == 0) {       //変数jが0の時、スライドショー起動
+                    if (isClickStartButton) {       //変数jが0の時、スライドショー起動
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒に1回押されているのと同様の処理を行う
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        j = 1;          //スライドしている状態
+                        isClickStartButton = true;          //スライドしている状態
                     } else {
-                        j = 0;          //スライドしていない状態に戻す
+                        isClickStartButton = false;          //スライドしていない状態に戻す
                     }
                     break;
 
                 //ストップボタンの処理
                 case R.id.stopButton:
-                    if(j!=0){
-                        j = 0;              //スライド
+                    if (!isClickStartButton) {
+                        isClickStartButton = false;              //スライド
                         slideTimerTask.cancel();
                         slideTimerTask = null;
                     }
