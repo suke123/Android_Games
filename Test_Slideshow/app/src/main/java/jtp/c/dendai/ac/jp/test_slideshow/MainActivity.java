@@ -9,5 +9,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Slideshow slideshow = new Slideshow(this);
+        /*slideshow.Find_Dir("pictures");
+        slideshow.Image();*/
     }
 }
