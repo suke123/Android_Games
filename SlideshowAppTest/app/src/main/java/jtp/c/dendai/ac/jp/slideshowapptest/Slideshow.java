@@ -22,8 +22,7 @@ import android.widget.TextView;
  */
 
 public class Slideshow {
-    private int i = 0;
-    private boolean isClickStartButton = false;     //スライドしているかどうか
+    private int i = 0;private boolean isClickStartButton = false;     //スライドしているかどうか
     private String[] files;
     private Button prev_btn, next_btn;
     private ImageButton start_btn, stop_btn;
