@@ -40,10 +40,10 @@ public class Slideshow {
         View.OnClickListener myListener = new MyListener();
 
         //Button, ImageButton, ImageView, TextViewのIDを設定
-        prev_btn = (Button) a.findViewById(R.id.button);
-        start_btn = (ImageButton) a.findViewById(R.id.imageButton);
-        stop_btn = (ImageButton) a.findViewById(R.id.imageButton2);
-        next_btn = (Button) a.findViewById(R.id.button2);
+        prev_btn = (Button) a.findViewById(R.id.prevButton);
+        start_btn = (ImageButton) a.findViewById(R.id.startButton);
+        stop_btn = (ImageButton) a.findViewById(R.id.stopButton);
+        next_btn = (Button) a.findViewById(R.id.nextButton);
         prev_btn.setOnClickListener(myListener);
         start_btn.setOnClickListener(myListener);
         stop_btn.setOnClickListener(myListener);
@@ -82,7 +82,7 @@ public class Slideshow {
     //Startボタンを押された時の処理を行うクラス
     public class SlideTimerTask extends TimerTask {
         @Override
-        public void run() {
+        public void run() {                     //スレッドからUIを操作する
             handler.post(new Runnable() {
                 public void run() {
                     next_btn.performClick();    //performClick():ボタンを押さずにonClickイベントを発生
@@ -96,7 +96,7 @@ public class Slideshow {
         public void onClick(View v) {
             switch (v.getId()) {
                 //previousボタンの処理
-                case R.id.button:
+                case R.id.prevButton:
                     if (i == 0) {
                         i = files.length - 1;
                         Image();
@@ -107,26 +107,25 @@ public class Slideshow {
                     break;
 
                 //スタートボタンの処理
-                case R.id.imageButton:
+                case R.id.startButton:
                     if (j == 0) {       //変数jが0の時、スライドショー起動
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒に1回押されているのと同様の処理を行う
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        j = 1;      //
-                    } else {
+                        j = 1;      //                    } else {
                         j = 0;
                     }
                     break;
 
                 //ストップボタンの処理
-                case R.id.imageButton2:
+                case R.id.stopButton:
                     j = 0;
                     slideTimerTask.cancel();
                     slideTimerTask = null;
                     break;
 
                 //NEXTボタンの処理
-                case R.id.button2:
+                case R.id.nextButton:
                     if (i < files.length - 1) {
                         i++;
                         Image();
