@@ -135,11 +135,11 @@ public class Slideshow {
 
                 //NEXTボタンの処理
                 case R.id.nextButton:
-                    if (i < files.length - 1) {         //
-                        i++;
+                    if (i < files.length - 1) {         //最後の画像以外なら
+                        i++;                            //配列の順番が次の画像を表示させる
                         Image();
-                    } else {
-                        i = 0;
+                    } else {                            //最後の画像なら
+                        i = 0;                          //１番目の画像を表示する
                         Image();
                     }
                     break;
