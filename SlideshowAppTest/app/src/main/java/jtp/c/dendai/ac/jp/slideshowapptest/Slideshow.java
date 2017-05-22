@@ -36,7 +36,7 @@ public class Slideshow {
 
     public Slideshow(Activity a) {
         activity = a;
-        handler = new Handler();
+        handler = new Handler();        //widgetの属するスレッドにてHandlerクラスのインスタンスを生成
         View.OnClickListener myListener = new MyListener();
 
         //Button, ImageButton, ImageView, TextViewのIDを設定
@@ -80,10 +80,11 @@ public class Slideshow {
 
     //TimerTask:一定時間に同じ処理を繰り返す
     //Startボタンを押された時の処理を行うクラス
+    //繰り返し画像を切り替えるためスレッドを用いる
     public class SlideTimerTask extends TimerTask {
         @Override
         public void run() {                     //スレッドからUIを操作する
-            //普通別スレッドからwidgetに直接アクセつできないが、Handlerクラスのpostメソッドを使用することで、解決する
+            //普通別スレッドからwidgetに直接アクセつできないが、Handlerクラスのpostメソッドを使用することで、解決する。
             //widgetの属するスレッドにてHandlerクラスのインスタンスを生成して、このインスタンスの postメソッドの引数に、
             //widgetにアクセスするコードを記述したRunnableクラスを指定する。
             handler.post(new Runnable() {
@@ -94,17 +95,18 @@ public class Slideshow {
         }
     }
 
+    //ボタンを押した時のクリックイベント
     private class MyListener implements View.OnClickListener {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
                 //previousボタンの処理
                 case R.id.prevButton:
-                    if (i == 0) {
-                        i = files.length - 1;
+                    if (i == 0) {               //1枚目の画像なら
+                        i = files.length - 1;   //最後の画像を表示させる。（配列の最後の要素に設定する）
                         Image();
                     } else {
-                        i--;
+                        i--;                    //1枚目以外なら配列の前の要素に戻す
                         Image();
                     }
                     break;
@@ -115,16 +117,19 @@ public class Slideshow {
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒に1回押されているのと同様の処理を行う
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        j = 1;      //                    } else {
-                        j = 0;
+                        j = 1;          //スライドしている状態
+                    } else {
+                        j = 0;          //スライドしていない状態に戻す
                     }
                     break;
 
                 //ストップボタンの処理
                 case R.id.stopButton:
-                    j = 0;
-                    slideTimerTask.cancel();
-                    slideTimerTask = null;
+                    if(j!=0){
+                        j = 0;              //スライド
+                        slideTimerTask.cancel();
+                        slideTimerTask = null;
+                    }
                     break;
 
                 //NEXTボタンの処理
