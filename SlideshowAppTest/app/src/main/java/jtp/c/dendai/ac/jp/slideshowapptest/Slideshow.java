@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 public class Slideshow {
     private int i = 0;
-    private boolean isClickStartButton = false;
+    private boolean isClickStartButton = false;     //スライドしているかどうか
     private String[] files;
     private Button prev_btn, next_btn;
     private ImageButton start_btn, stop_btn;
@@ -114,21 +114,21 @@ public class Slideshow {
 
                 //スタートボタンの処理
                 case R.id.startButton:
-                    if (!isClickStartButton) {       //変数jが0の時、スライドショー起動
+                    if (!isClickStartButton) {       //isClickStartButtonがfalseならスライドショー起動
                         timer = new Timer();
                         slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒に1回押されているのと同様の処理を行う
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
-                        isClickStartButton = true;          //スライドしている状態
+                        isClickStartButton = true;          //スライドしている状態にする(isclickStartButtonをtrueにする)
                     } else {
-                        isClickStartButton = false;          //スライドしていない状態に戻す
+                        isClickStartButton = false;          //スライドしていない状態に戻す(isclickStartButtonをfalseにする)
                     }
                     break;
 
                 //ストップボタンの処理
                 case R.id.stopButton:
-                    if (isClickStartButton) {
-                        isClickStartButton = false;              //スライド
-                        slideTimerTask.cancel();
+                    if (isClickStartButton) {           //スライドしているなら(isclickStartButton　が　true)
+                        isClickStartButton = false;     //スライドしていない状態に戻す(isclickStartButtonをfalseにする)
+                        slideTimerTask.cancel();        //
                         slideTimerTask = null;
                     }
                     break;
