@@ -116,7 +116,7 @@ public class Slideshow {
                 case R.id.startButton:
                     if (!isClickStartButton) {       //isClickStartButtonがfalseならスライドショー起動
                         timer = new Timer();
-                        slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒に1回押されているのと同様の処理を行う
+                        slideTimerTask = new SlideTimerTask();      //NEXTボタンが2秒間隔で押されているのと同様の処理を行う
                         timer.schedule(slideTimerTask, 2000, 2000); //スライドショーの遷移時間
                         isClickStartButton = true;          //スライドしている状態にする(isclickStartButtonをtrueにする)
                     } else {
@@ -128,14 +128,14 @@ public class Slideshow {
                 case R.id.stopButton:
                     if (isClickStartButton) {           //スライドしているなら(isclickStartButton　が　true)
                         isClickStartButton = false;     //スライドしていない状態に戻す(isclickStartButtonをfalseにする)
-                        slideTimerTask.cancel();        //
-                        slideTimerTask = null;
+                        slideTimerTask.cancel();        //slideTimerTaskの処理を取り消す(スライドショーを停止させる)
+                        slideTimerTask = null;          //slideTimerTaskを初期化する
                     }
                     break;
 
                 //NEXTボタンの処理
                 case R.id.nextButton:
-                    if (i < files.length - 1) {
+                    if (i < files.length - 1) {         //
                         i++;
                         Image();
                     } else {
