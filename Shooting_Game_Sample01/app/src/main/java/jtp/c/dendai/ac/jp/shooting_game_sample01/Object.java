@@ -26,7 +26,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 
 public abstract class Object {
-    public Mesod ms = new Mesod();
+    public Method ms = new Method();
     public float disp_w,disp_h;
     //オブジェクトの画像
     public Drawable img;
