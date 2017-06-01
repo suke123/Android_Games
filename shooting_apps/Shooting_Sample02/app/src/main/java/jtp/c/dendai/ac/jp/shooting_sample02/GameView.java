@@ -62,7 +62,37 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-    
+    public void startDrawThread() {
+        stopDrawThread();
+
+        drawThread = new DrawThread();
+        drawThread.start();
+    }
+
+    public boolean stopDrawThread() {
+        if (drawThread == null) {
+            return false;
+        }
+
+        drawThread.finish();
+        drawThread = null;
+        return true;
+    }
+
+    @Override
+    public void surfaceCreated(SurfaceHolder holder) {
+        startDrawThread();
+    }
+
+    @Override
+    public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+
+    }
+
+    @Override
+    public void surfaceDestroyed(SurfaceHolder holder){
+        stopDrawThread();
+    }
 
     public GameView(Context context) {
         super(context);
