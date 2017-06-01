@@ -6,9 +6,10 @@
     android:layout_height="match_parent"
     tools:context="jtp.c.dendai.ac.jp.shooting_sample02.MainActivity">
 
+    <!--
     <ImageView
         android:id="@+id/drawable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
+-->
 </LinearLayout>

@@ -25,7 +25,7 @@ public class GameView extends View {
         int height = canvas.getHeight();
 
         if (droid == null) {
-            Bitmap droidBitmap = BitmapFactory.decodeResource(getResources().R.drawable.droid);
+            Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
             droid = new Droid(droidBitmap, width, height);
         }
 
