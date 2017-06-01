@@ -101,7 +101,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     protected void drawGame(Canvas canvas) {
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.WHITE);      //背景：白
 
         int width = canvas.getWidth();
         int height = canvas.getHeight();
