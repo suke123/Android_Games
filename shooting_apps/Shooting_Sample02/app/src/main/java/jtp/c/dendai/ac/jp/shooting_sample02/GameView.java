@@ -4,21 +4,65 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.view.SurfaceHolder;
+import android.view.SurfaceView;
 import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * Created by taka on 2017/06/01.
  */
 
-public class GameView extends View {
+public class GameView extends SurfaceView implements SurfaceHolder.Callback {
+
+    private static final long DRAW_INTERVAL = 1000 / 60;
+
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
     private Droid droid;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
+
+    private DrawThread drawThread;
+
+    private class DrawThread extends Thread {
+        private final AtomicBoolean isFinished = new AtomicBoolean();
+
+        public void finish() {
+            isFinished.set(true);
+        }
+
+        @Override
+        public void run() {
+            SurfaceHolder holder = getHolder();
+            while (!isFinished.get()) {
+                if (holder.isCreating()) {
+                    continue;
+                }
+
+                Canvas canvas = holder.lockCanvas();
+                if (canvas == null) {
+                    continue;
+                }
+
+                drawGame(canvas);
+                holder.unlockCanvasAndPost(canvas);
+
+                synchronized (this) {
+                    try {
+                        wait(DRAW_INTERVAL);
+                    } catch (InterruptedException e) {
+
+                    }
+                }
+            }
+        }
+    }
+
+    
 
     public GameView(Context context) {
         super(context);
