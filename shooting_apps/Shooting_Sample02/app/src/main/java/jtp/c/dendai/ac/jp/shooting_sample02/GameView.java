@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -96,11 +97,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public GameView(Context context) {
         super(context);
+        getHolder().addCallback(this);
     }
 
-    @Override
-    protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+    protected void drawGame(Canvas canvas) {
+        canvas.drawColor(Color.WHITE);
 
         int width = canvas.getWidth();
         int height = canvas.getHeight();
@@ -117,7 +118,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         drawObjectList(canvas, missileList, width, height);
 
         droid.draw(canvas);
-        invalidate();
     }
 
     private static void drawObjectList(
