@@ -18,7 +18,7 @@ public class Bullet extends BaseObject {
 
     Bullet(Rect rect, float alignXValue) {
         xPosition = rect.centerX();
-        yPosition = rect.centerY();
+        yPosition = rect.centerY() - rect.height() / 2;
         alignX = alignXValue;
     }
 
@@ -30,6 +30,6 @@ public class Bullet extends BaseObject {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawCircle(xPosition, yPosition-20, SIZE, paint);
+        canvas.drawCircle(xPosition, yPosition, SIZE, paint);
     }
 }
