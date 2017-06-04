@@ -18,7 +18,7 @@ public class Bullet extends BaseObject {
 
     Bullet(Rect rect, float alignXValue) {
         xPosition = rect.centerX();
-        yPosition = rect.centerY() - rect.height() / 2 - 50;
+        yPosition = rect.centerY() - rect.height() / 2 - 20;
         alignX = alignXValue;
     }
 
