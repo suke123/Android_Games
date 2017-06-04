@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
@@ -135,6 +136,24 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 i--;
             }
         }
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                fire(event.getX(), event.getY());
+                break;
+        }
+
+        return super.onTouchEvent(event);
+    }
+
+    private void fire(float x, float y) {
+        float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
+
+        Bullet bullet = new Bullet(droid.rect, alignX);
+        bulletList.add(0, bullet);
     }
 
     private Missile launchMissile(int width, int height) {
