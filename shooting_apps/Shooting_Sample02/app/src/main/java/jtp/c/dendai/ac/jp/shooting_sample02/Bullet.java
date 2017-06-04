@@ -30,6 +30,6 @@ public class Bullet extends BaseObject {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawCircle(xPosition, yPosition, SIZE, paint);
+        canvas.drawCircle(xPosition, yPosition-20, SIZE, paint);
     }
 }
