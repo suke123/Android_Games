@@ -150,7 +150,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     private void fire(float x, float y) {
-        float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
+        //float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
+        float alignX = Math.abs(y - droid.rect.centerY()) / (x - droid.rect.centerX());
 
         Bullet bullet = new Bullet(droid.rect, alignX);
         bulletList.add(0, bullet);
