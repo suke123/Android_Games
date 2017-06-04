@@ -25,7 +25,7 @@ public class Bullet extends BaseObject {
     @Override
     public void move() {
         yPosition -= 1 * MOVE_WEIGHT;
-        xPosition += alignX * MOVE_WEIGHT;
+        //xPosition += alignX * MOVE_WEIGHT;
     }
 
     @Override
