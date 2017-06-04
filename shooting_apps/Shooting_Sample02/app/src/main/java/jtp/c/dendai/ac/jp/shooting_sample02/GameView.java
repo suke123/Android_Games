@@ -26,6 +26,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Droid droid;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
+    private final List<BaseObject> bulletList = new ArrayList<>();
 
     private DrawThread drawThread;
 
@@ -91,7 +92,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     @Override
-    public void surfaceDestroyed(SurfaceHolder holder){
+    public void surfaceDestroyed(SurfaceHolder holder) {
         stopDrawThread();
     }
 
@@ -116,6 +117,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             missileList.add(missile);
         }
         drawObjectList(canvas, missileList, width, height);
+
+        drawObjectList(canvas, bulletList, width, height);
 
         droid.draw(canvas);
     }
