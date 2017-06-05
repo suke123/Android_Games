@@ -25,6 +25,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
     private Droid droid;        //自機クラス
+    //private Bullet bullet;
+    private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
     private final List<BaseObject> bulletList = new ArrayList<>();
@@ -111,7 +113,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         if (droid == null) {
             Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
             droid = new Droid(droidBitmap, width, height);
+
         }
+
+        /*if(bullet==null){
+            Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
+            Bullet bullet = new Bullet(droidBitmap, width, height);
+        }*/
 
         if (rand.nextInt(MISSILE_LAUNCH_WEIGHT) == 0) {
             Missile missile = launchMissile(width, height);
@@ -151,6 +159,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private void fire(float x, float y) {
         float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
+        Bitmap bulletBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
 
         Bullet bullet = new Bullet(droid.rect, alignX);
         bulletList.add(0, bullet);

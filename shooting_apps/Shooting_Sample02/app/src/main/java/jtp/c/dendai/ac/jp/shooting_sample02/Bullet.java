@@ -1,5 +1,7 @@
 package jtp.c.dendai.ac.jp.shooting_sample02;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
@@ -12,6 +14,8 @@ public class Bullet extends BaseObject {
     private static final float MOVE_WEIGHT = 3.0f;
     private final Paint paint = new Paint();
 
+    //public final Bitmap bitmap;
+
     private static final float SIZE = 15f;
 
     public final float alignX;
@@ -22,6 +26,13 @@ public class Bullet extends BaseObject {
         alignX = alignXValue;
     }
 
+    /*Bullet(Rect rect, float alignXValue) {
+        //this.bitmap = bitmap;
+        xPosition = rect.centerX();
+        yPosition = rect.centerY() - rect.height() / 2 - 20; //弾の出現ポイント
+        alignX = alignXValue;
+    }*/
+
     @Override
     public void move() {
         yPosition -= 1 * MOVE_WEIGHT;
@@ -30,6 +41,7 @@ public class Bullet extends BaseObject {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawCircle(xPosition, yPosition, SIZE, paint);
+        //canvas.drawCircle(xPosition, yPosition, SIZE, paint);
+        //Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
     }
 }

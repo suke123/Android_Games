@@ -9,7 +9,7 @@ import android.graphics.Rect;
  * Created by taka on 2017/06/01.
  */
 
-public class Droid extends BaseObject {
+public class Droid extends BaseObject{
     private final Paint paint = new Paint();
 
     public final Bitmap bitmap;
