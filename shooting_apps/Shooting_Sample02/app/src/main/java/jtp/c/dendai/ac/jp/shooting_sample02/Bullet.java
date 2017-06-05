@@ -28,7 +28,7 @@ public class Bullet extends BaseObject {
 
     Bullet(Bitmap bulletBitmap, Rect rect, float alignXValue) {
         this.bulletBitmap = bulletBitmap;
-        xPosition = rect.centerX();
+        xPosition = rect.centerX() - 10;
         yPosition = rect.centerY() - rect.height() / 2 - 50; //弾の出現ポイント
         alignX = alignXValue;
     }
@@ -42,7 +42,8 @@ public class Bullet extends BaseObject {
     @Override
     public void draw(Canvas canvas) {
         //canvas.drawCircle(xPosition, yPosition, SIZE, paint);
-        //Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
+
+        //drawBitmap(bitmap,画像の左上のX座標,画像の左上のY座標)
         canvas.drawBitmap(bulletBitmap, xPosition, yPosition, paint);
     }
 }

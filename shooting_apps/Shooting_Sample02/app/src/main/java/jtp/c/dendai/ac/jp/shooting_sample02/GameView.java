@@ -130,7 +130,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         drawObjectList(canvas, bulletList, width, height);
 
         droid.draw(canvas);
-        //bullet.draw(canvas);
     }
 
     private static void drawObjectList(
