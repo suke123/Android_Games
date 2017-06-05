@@ -14,7 +14,7 @@ public class Bullet extends BaseObject {
     private static final float MOVE_WEIGHT = 3.0f;
     private final Paint paint = new Paint();
 
-    //public final Bitmap bitmap;
+    public Bitmap bulletBitmap;
 
     private static final float SIZE = 15f;
 
@@ -26,12 +26,12 @@ public class Bullet extends BaseObject {
         alignX = alignXValue;
     }
 
-    /*Bullet(Rect rect, float alignXValue) {
-        //this.bitmap = bitmap;
+    Bullet(Bitmap bulletBitmap, Rect rect, float alignXValue) {
+        this.bulletBitmap = bulletBitmap;
         xPosition = rect.centerX();
-        yPosition = rect.centerY() - rect.height() / 2 - 20; //弾の出現ポイント
+        yPosition = rect.centerY() - rect.height() / 2 - 50; //弾の出現ポイント
         alignX = alignXValue;
-    }*/
+    }
 
     @Override
     public void move() {

@@ -161,7 +161,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
         Bitmap bulletBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
 
-        Bullet bullet = new Bullet(droid.rect, alignX);
+        Bullet bullet = new Bullet(bulletBitmap, droid.rect, alignX);
         bulletList.add(0, bullet);
     }
 
