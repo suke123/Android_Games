@@ -43,6 +43,6 @@ public class Bullet extends BaseObject {
     public void draw(Canvas canvas) {
         //canvas.drawCircle(xPosition, yPosition, SIZE, paint);
         //Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
-        canvas.drawBitmap(bulletBitmap, rect.left, rect.top, paint);
+        canvas.drawBitmap(bulletBitmap, xPosition, yPosition, paint);
     }
 }

@@ -26,7 +26,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
     private Droid droid;        //自機クラス
     private Bullet bullet;
-    private int bullet_type = 1;
+    //private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
     private final List<BaseObject> bulletList = new ArrayList<>();
