@@ -25,7 +25,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
     private Droid droid;        //自機クラス
-    //private Bullet bullet;
+    private Bullet bulletBitmap;
     private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
@@ -130,6 +130,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         drawObjectList(canvas, bulletList, width, height);
 
         droid.draw(canvas);
+        bulletBitmap.draw(canvas);
     }
 
     private static void drawObjectList(
@@ -159,7 +160,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private void fire(float x, float y) {
         float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
-        Bitmap bulletBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
+        bulletBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
 
         Bullet bullet = new Bullet(bulletBitmap, droid.rect, alignX);
         bulletList.add(0, bullet);
