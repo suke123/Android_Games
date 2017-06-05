@@ -15,7 +15,7 @@ public class Bullet extends BaseObject {
     private final Paint paint = new Paint();
 
     public Bitmap bulletBitmap;
-
+    public Rect rect;
     private static final float SIZE = 15f;
 
     public final float alignX;
@@ -43,5 +43,6 @@ public class Bullet extends BaseObject {
     public void draw(Canvas canvas) {
         //canvas.drawCircle(xPosition, yPosition, SIZE, paint);
         //Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
+        canvas.drawBitmap(bulletBitmap, rect.left, rect.top, paint);
     }
 }
