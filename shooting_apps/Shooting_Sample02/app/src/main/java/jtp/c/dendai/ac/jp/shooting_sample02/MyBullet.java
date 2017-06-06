@@ -30,7 +30,7 @@ public class MyBullet extends BaseObject {
         this.bulletBitmap = bulletBitmap;
 
         xPosition = rect.centerX() - bulletBitmap.getWidth()/2;
-        yPosition = rect.centerY() - rect.height() / 2 - 50; //弾の出現ポイント
+        yPosition = rect.centerY() - rect.height() / 2 - bulletBitmap.getHeight(); //弾の出現ポイント
         alignX = alignXValue;
     }
 
