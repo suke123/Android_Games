@@ -21,11 +21,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
-    private static final long DRAW_INTERVAL = 1000 / 100;
+    private static final long DRAW_INTERVAL = 1000 / 100;   //描画間隔
 
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
     private MyFighter myFighter;        //自機クラス
-    private MyBullet bullet;
+    private MyBullet bullet;            //自弾クラスkurasu
     //private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
