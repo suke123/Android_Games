@@ -48,7 +48,7 @@ public class Missile extends BaseObject {
             xPosition -= 0.5 * alignX * MOVE_WEIGHT;
         } else {
             xPosition += Math.cos(theta) + theta * Math.sin(theta);
-            yPosition += Math.sin(theta) - theta * Math.cos(theta);
+            yPosition += Math.sin(theta) - theta * Math.cos(theta) + rand.nextDouble();
         }
     }
 
