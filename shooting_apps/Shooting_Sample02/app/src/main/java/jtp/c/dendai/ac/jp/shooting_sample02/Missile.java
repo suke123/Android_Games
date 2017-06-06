@@ -16,7 +16,7 @@ public class Missile extends BaseObject {
     private final Paint paint = new Paint();
 
     private Random rand = new Random();
-    private int missile_move_type = rand.nextInt(2);
+    private int missile_move_type = rand.nextInt(3);
 
     public final float alignX;
 
@@ -33,15 +33,13 @@ public class Missile extends BaseObject {
         //yPosition += 0.1 * MOVE_WEIGHT;
         //xPosition += alignX * MOVE_WEIGHT;
         if (missile_move_type == 0) {
-            yPosition += 1 * MOVE_WEIGHT;
+            yPosition += 0.5 * MOVE_WEIGHT;
+        } else if (missile_move_type == 1) {
+            yPosition += 0.5 * MOVE_WEIGHT;
+            xPosition -= 0.5 * alignX * MOVE_WEIGHT;
         } else {
-            yPosition += 1 * MOVE_WEIGHT;
-            xPosition -= alignX * MOVE_WEIGHT;
-            if (xPosition < 0) {
-                xPosition += alignX * MOVE_WEIGHT;
-                yPosition += 1 * MOVE_WEIGHT;
-            }
-
+            yPosition += 0.5 * MOVE_WEIGHT;
+            xPosition += 0.5 * alignX * MOVE_WEIGHT;
         }
     }
 
