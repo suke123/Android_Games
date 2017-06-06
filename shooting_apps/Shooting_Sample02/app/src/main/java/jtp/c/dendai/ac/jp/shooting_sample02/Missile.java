@@ -32,15 +32,14 @@ public class Missile extends BaseObject {
     public void move() {
         //yPosition += 0.1 * MOVE_WEIGHT;
         //xPosition += alignX * MOVE_WEIGHT;
-        if(missile_move_type==0){
+        if (missile_move_type == 0) {
             yPosition += 1 * MOVE_WEIGHT;
-        }
-        else {
+        } else {
             yPosition += 1 * MOVE_WEIGHT;
             xPosition -= alignX * MOVE_WEIGHT;
-            if(xPosition<0){
+            if (xPosition < 0) {
+                xPosition += alignX * MOVE_WEIGHT;
                 yPosition += 1 * MOVE_WEIGHT;
-                xPosition -= alignX * MOVE_WEIGHT;
             }
 
         }
