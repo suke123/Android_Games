@@ -4,6 +4,8 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 
+import java.util.Random;
+
 /**
  * Created by taka on 2017/06/01.
  */
@@ -12,6 +14,9 @@ public class Missile extends BaseObject {
     private static final float MOVE_WEIGHT = 3.0f;
     private static final float SIZE = 10f;
     private final Paint paint = new Paint();
+
+    private Random rand = new Random();
+    private int missile_move_type = rand.nextInt(2);
 
     public final float alignX;
 
@@ -25,8 +30,20 @@ public class Missile extends BaseObject {
 
     @Override
     public void move() {
-        yPosition += 1 * MOVE_WEIGHT;
-        xPosition += alignX * MOVE_WEIGHT;
+        //yPosition += 0.1 * MOVE_WEIGHT;
+        //xPosition += alignX * MOVE_WEIGHT;
+        if(missile_move_type==0){
+            yPosition += 1 * MOVE_WEIGHT;
+        }
+        else {
+            yPosition += 1 * MOVE_WEIGHT;
+            xPosition -= alignX * MOVE_WEIGHT;
+            if(xPosition<0){
+                yPosition += 1 * MOVE_WEIGHT;
+                xPosition -= alignX * MOVE_WEIGHT;
+            }
+
+        }
     }
 
     @Override
