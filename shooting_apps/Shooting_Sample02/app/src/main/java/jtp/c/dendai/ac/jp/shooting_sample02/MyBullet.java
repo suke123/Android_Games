@@ -10,7 +10,7 @@ import android.graphics.Rect;
  * Created by taka on 2017/06/02.
  */
 
-public class Bullet extends BaseObject {
+public class MyBullet extends BaseObject {
     private static final float MOVE_WEIGHT = 3.0f;
     private final Paint paint = new Paint();
 
@@ -20,13 +20,13 @@ public class Bullet extends BaseObject {
 
     public final float alignX;
 
-    Bullet(Rect rect, float alignXValue) {
+    /*Bullet(Rect rect, float alignXValue) {
         xPosition = rect.centerX();
         yPosition = rect.centerY() - rect.height() / 2 - 20; //弾の出現ポイント
         alignX = alignXValue;
-    }
+    }*/
 
-    Bullet(Bitmap bulletBitmap, Rect rect, float alignXValue) {
+    MyBullet(Bitmap bulletBitmap, Rect rect, float alignXValue) {
         this.bulletBitmap = bulletBitmap;
         xPosition = rect.centerX() - 10;
         yPosition = rect.centerY() - rect.height() / 2 - 50; //弾の出現ポイント

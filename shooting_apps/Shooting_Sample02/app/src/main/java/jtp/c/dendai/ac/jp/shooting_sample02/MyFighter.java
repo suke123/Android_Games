@@ -9,13 +9,13 @@ import android.graphics.Rect;
  * Created by taka on 2017/06/01.
  */
 
-public class Droid extends BaseObject{
+public class MyFighter extends BaseObject{
     private final Paint paint = new Paint();
 
     public final Bitmap bitmap;
     public final Rect rect;
 
-    public Droid(Bitmap bitmap, int width, int height) {
+    public MyFighter(Bitmap bitmap, int width, int height) {
         this.bitmap = bitmap;
 
         int left = (width - bitmap.getWidth()) / 2;

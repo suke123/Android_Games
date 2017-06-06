@@ -24,8 +24,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private static final long DRAW_INTERVAL = 1000 / 60;
 
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
-    private Droid droid;        //自機クラス
-    private Bullet bullet;
+    private MyFighter myFighter;        //自機クラス
+    private MyBullet bullet;
     //private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
@@ -110,15 +110,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int width = canvas.getWidth();
         int height = canvas.getHeight();
 
-        if (droid == null) {
-            Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
-            droid = new Droid(droidBitmap, width, height);
+        if (myFighter == null) {
+            Bitmap myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
+            myFighter = new MyFighter(myFighterBitmap, width, height);
 
         }
 
         /*if(bullet==null){
-            Bitmap droidBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
-            Bullet bullet = new Bullet(droidBitmap, width, height);
+            Bitmap myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
+            Bullet bullet = new Bullet(myFighterBitmap, width, height);
         }*/
 
         if (rand.nextInt(MISSILE_LAUNCH_WEIGHT) == 0) {
@@ -129,7 +129,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         drawObjectList(canvas, bulletList, width, height);
 
-        droid.draw(canvas);
+        myFighter.draw(canvas);
     }
 
     private static void drawObjectList(
@@ -158,10 +158,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     private void fire(float x, float y) {
-        float alignX = (x - droid.rect.centerX()) / Math.abs(y - droid.rect.centerY());
+        float alignX = (x - myFighter.rect.centerX()) / Math.abs(y - myFighter.rect.centerY());
         Bitmap bulletBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
 
-        bullet = new Bullet(bulletBitmap, droid.rect, alignX);
+        bullet = new MyBullet(bulletBitmap, myFighter.rect, alignX);
         bulletList.add(0, bullet);
     }
 
