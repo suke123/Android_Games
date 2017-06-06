@@ -15,7 +15,7 @@ public class MyBullet extends BaseObject {
     private final Paint paint = new Paint();
 
     public Bitmap bulletBitmap;
-    public Rect rect,bulletRect;
+    public Rect rect, bulletRect;
     private static final float SIZE = 15f;
 
     public final float alignX;
@@ -29,7 +29,7 @@ public class MyBullet extends BaseObject {
     MyBullet(Bitmap bulletBitmap, Rect rect, float alignXValue) {
         this.bulletBitmap = bulletBitmap;
 
-        xPosition = rect.centerX() - bulletBitmap.getWidth();                     //弾の出現ポイント(x)
+        xPosition = rect.centerX() - bulletBitmap.getWidth() / 2;                     //弾の出現ポイント(x)
         yPosition = rect.centerY() - rect.height() / 2 - bulletBitmap.getHeight();  //弾の出現ポイント(y)
         alignX = alignXValue;
     }
