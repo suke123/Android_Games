@@ -7,6 +7,19 @@ import android.graphics.Canvas;
  */
 
 public abstract class BaseObject {
+    static final int STATE_NORMAL=-1;
+    static final int STATE_DESTROYED=0;
+
+    int state = STATE_NORMAL;
+
+    enum Type{
+        MyFighter,
+        MyBullet,
+        Missie,
+    }
+
+    public abstract Type getType();
+
     float xPosition;
     float yPosition;
 
@@ -16,6 +29,10 @@ public abstract class BaseObject {
         if (yPosition < 0 || xPosition < 0 || yPosition > height || xPosition > width) {
             return false;
         }
+        if(state==STATE_DESTROYED) {
+            return false;
+        }
+
         return true;
     }
 

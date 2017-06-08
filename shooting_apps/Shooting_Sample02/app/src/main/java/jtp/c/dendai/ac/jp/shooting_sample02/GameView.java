@@ -166,6 +166,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     private Missile launchMissile(int width, int height) {
+
+
         int fromX = rand.nextInt(width);
         int toX = rand.nextInt(height);
 

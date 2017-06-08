@@ -1,4 +1,4 @@
-package jtp.c.dendai.ac.jp.shooting_sample01;
+ipackage jtp.c.dendai.ac.jp.shooting_sample01;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,6 +55,6 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     public void myBullet(){
-        
+
     }
 }

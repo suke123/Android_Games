@@ -40,16 +40,16 @@ public class Missile extends BaseObject {
         //yPosition += 0.1 * MOVE_WEIGHT;
         //xPosition += alignX * MOVE_WEIGHT;
         count++;
-        double theta = Math.toRadians(count) * 1;
-        if (missile_move_type == 0) {
+        double theta = Math.toRadians(count) * 5;
+        /*if (missile_move_type == 0) {
             yPosition += 0.5 * MOVE_WEIGHT;
         } else if (missile_move_type == 1) {
             yPosition += 0.5 * MOVE_WEIGHT;
             xPosition -= 0.5 * alignX * MOVE_WEIGHT;
-        } else {
-            xPosition += Math.cos(theta) + theta * Math.sin(theta);
-            yPosition += Math.sin(theta) - theta * Math.cos(theta) + rand.nextDouble();
-        }
+        } else {*/
+            xPosition += Math.cos(theta) * 5;// - theta * Math.sin(theta);
+            yPosition += 1;// += Math.cos(theta);// + theta * Math.cos(theta) + rand.nextDouble();
+        //}
     }
 
     @Override
