@@ -130,6 +130,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         drawObjectList(canvas, bulletList, width, height);
 
         for (int i = 0; i < missileList.size(); i++) {
+            //ミサイルと自機が当たったかどうかを判定
             BaseObject missile = missileList.get(i);
             if (myFighter.isHit(missile)) {
                 missile.hit();
@@ -137,6 +138,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 break;
             }
 
+            //弾とミサイルが当たったかどうかを判定
             for (int j = 0; j < bulletList.size(); j++) {
                 BaseObject bullet = bulletList.get(j);
 
