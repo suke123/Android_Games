@@ -6,6 +6,8 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
+import java.util.TimerTask;
+
 /**
  * Created by taka on 2017/06/02.
  */
@@ -40,8 +42,31 @@ public class MyBullet extends BaseObject {
         //xPosition += alignX * MOVE_WEIGHT;
     }
 
+    //引数のBaseObjectのタイプがMissileで、
+    // 距離が自身のSIZE未満であれば当たったと判定する
+    @Override
+    public boolean isHit(BaseObject object) {
+        if (object.getType() != Type.Missie) {
+            return false;
+        }
+
+        return (calcDistance(this, object) < SIZE);
+    }
+
+    //タイプとしてMyBulletを返す
+    @Override
+    public Type getType() {
+        return Type.MyBullet;
+    }
+
     @Override
     public void draw(Canvas canvas) {
+
+        //状態がNORMALでなければ描画しない
+        if (state != STATE_NORMAL) {
+            return;
+        }
+
         //canvas.drawCircle(xPosition, yPosition, SIZE, paint);
 
         //drawBitmap(bitmap,画像の左上のX座標,画像の左上のY座標)
