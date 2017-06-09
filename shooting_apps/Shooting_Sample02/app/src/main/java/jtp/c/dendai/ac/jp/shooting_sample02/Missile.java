@@ -47,13 +47,34 @@ public class Missile extends BaseObject {
             yPosition += 0.5 * MOVE_WEIGHT;
             xPosition -= 0.5 * alignX * MOVE_WEIGHT;
         } else {*/
-            xPosition += Math.cos(theta) * 5;// - theta * Math.sin(theta);
-            yPosition += 1;// += Math.cos(theta);// + theta * Math.cos(theta) + rand.nextDouble();
+        xPosition += Math.cos(theta) * 5;// - theta * Math.sin(theta);
+        yPosition += 1;// += Math.cos(theta);// + theta * Math.cos(theta) + rand.nextDouble();
         //}
     }
 
+    //引数のGameObjectのタイプがMissie以外で、
+    // 距離が自身のSIZE未満であれば当たったと判定する
     @Override
+    public boolean isHit(BaseObject object) {
+        if (object.getType() != Type.Missie) {
+            return false;
+        }
+
+        return (calcDistance(this, object) < SIZE);
+    }
+
+    //タイプとしてMissileを返す
+    @Override
+    public Type getType() {
+        return Type.Missie;
+    }
+
+    @Override
+    //状態がNORMALでなければ描画しない
     public void draw(Canvas canvas) {
+        if (state != STATE_NORMAL) {
+            return;
+        }
         canvas.drawCircle(xPosition, yPosition, SIZE, paint);
     }
 }
