@@ -44,7 +44,7 @@ public abstract class BaseObject {
     public abstract boolean isHit(BaseObject object);
 
     //Hitメソッドが呼ばれると、状態をDESTROYEDにする
-    public void Hit() {
+    public void hit() {
         state = STATE_DESTROYED;
     }
 
