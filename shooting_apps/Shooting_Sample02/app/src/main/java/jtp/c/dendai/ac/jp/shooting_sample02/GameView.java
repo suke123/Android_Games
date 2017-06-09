@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -24,12 +25,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private static final long DRAW_INTERVAL = 1000 / 100;   //描画間隔
 
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
+
+    private static final float SCORE_TEXT_SIZE = 60.0f;
+
     private MyFighter myFighter;        //自機クラス
     private MyBullet bullet;            //自弾クラスkurasu
     //private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
     private final List<BaseObject> bulletList = new ArrayList<>();
+
+    private long score;
+    private final Paint paintScore = new Paint();
 
     private DrawThread drawThread;
 
@@ -101,6 +108,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     public GameView(Context context) {
         super(context);
+
+        paintScore.setColor(Color.BLACK);
+        paintScore.setTextSize(SCORE_TEXT_SIZE);
+        paintScore.setAntiAlias(true);
+
         getHolder().addCallback(this);
     }
 
@@ -145,11 +157,15 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 if (bullet.isHit(missile)) {
                     missile.hit();
                     bullet.hit();
+
+                    score += 10;
                 }
             }
         }
 
         myFighter.draw(canvas);
+
+        canvas.drawText(String.valueOf(score), 0, SCORE_TEXT_SIZE, paintScore);
     }
 
     private static void drawObjectList(
