@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Typeface;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -16,17 +17,41 @@ import java.util.List;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import android.os.Handler;
+
+import static android.graphics.Typeface.BOLD_ITALIC;
+
 /**
  * Created by taka on 2017/06/01.
  */
 
 public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
+    //GameViewのイベントを外部に伝えるためのEventCallbackインターフェースを追加
+    /*
+    * EvantCallback始まり
+    * */
+    public interface EventCallback {
+        void onGameOver(long score);
+    }
+
+    private EventCallback eventCallback;
+
+    public void setEventCallback(EventCallback eventCallback) {
+        this.eventCallback = eventCallback;
+    }
+    /*
+    * EvantCallback終わり
+    * */
+
+    private Handler handler = new Handler();
+
     private static final long DRAW_INTERVAL = 1000 / 100;   //描画間隔
 
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
 
-    private static final float SCORE_TEXT_SIZE = 60.0f;
+    private static final float HIGHSCORE_TEXT_SIZE = 30.0f;
+    private static final float SCORE_TEXT_SIZE = 70.0f;
 
     private MyFighter myFighter;        //自機クラス
     private MyBullet bullet;            //自弾クラスkurasu
@@ -35,8 +60,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private final Random rand = new Random(System.currentTimeMillis());
     private final List<BaseObject> bulletList = new ArrayList<>();
 
-    private long score;
+    private long score, highScore = 0;
     private final Paint paintScore = new Paint();
+    private final Paint paintHighscore = new Paint();
 
     private DrawThread drawThread;
 
@@ -109,8 +135,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public GameView(Context context) {
         super(context);
 
+        paintHighscore.setColor(Color.BLACK);
+        paintHighscore.setTypeface(Typeface.defaultFromStyle(BOLD_ITALIC));
+        paintHighscore.setTextSize(HIGHSCORE_TEXT_SIZE);
+        paintHighscore.setAntiAlias(true);
+
         paintScore.setColor(Color.BLACK);
-        paintScore.setTextSize(SCORE_TEXT_SIZE);
+        paintScore.setTypeface(Typeface.defaultFromStyle(BOLD_ITALIC));
+        paintScore.setTextSize(HIGHSCORE_TEXT_SIZE + 10);
         paintScore.setAntiAlias(true);
 
         getHolder().addCallback(this);
@@ -147,6 +179,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             if (myFighter.isHit(missile)) {
                 missile.hit();
                 myFighter.hit();
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        eventCallback.onGameOver(score);
+                    }
+                });
+
                 break;
             }
 
@@ -159,13 +199,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                     bullet.hit();
 
                     score += 10;
+                    if (highScore < score) {
+                        highScore = score;
+                    }
                 }
             }
         }
 
         myFighter.draw(canvas);
 
-        canvas.drawText(String.valueOf(score), 0, SCORE_TEXT_SIZE, paintScore);
+        canvas.drawText("TOP:" + String.valueOf(highScore), 10, HIGHSCORE_TEXT_SIZE, paintHighscore);
+        canvas.drawText(String.valueOf(score), 10, SCORE_TEXT_SIZE, paintScore);
     }
 
     private static void drawObjectList(
@@ -202,12 +246,12 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
     private Missile launchMissile(int width, int height) {
-
+        Bitmap enemyBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.enemy01);
 
         int fromX = rand.nextInt(width);
         int toX = rand.nextInt(height);
 
         float alignX = (toX - fromX) / (float) height;
-        return new Missile(fromX, alignX);
+        return new Missile(enemyBitmap, fromX, alignX);
     }
 }

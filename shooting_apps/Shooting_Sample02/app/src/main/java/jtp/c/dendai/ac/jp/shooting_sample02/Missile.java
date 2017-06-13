@@ -1,12 +1,15 @@
 package jtp.c.dendai.ac.jp.shooting_sample02;
 
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
 
 import java.util.Random;
 
 import static java.lang.Math.cos;
+import static java.lang.Math.floor;
 import static java.lang.Math.sin;
 
 /**
@@ -18,21 +21,32 @@ public class Missile extends BaseObject {
     private static final float SIZE = 10f;
     private final Paint paint = new Paint();
 
+    public final Bitmap bitmap;
+    public final Rect rect;
+
     int count;
 
     private Random rand = new Random();
     private int missile_move_type = rand.nextInt(3);
 
-    public final float alignX;
+    //public final float alignX;
 
     double missile_move_x, getMissile_move_y;
 
-    Missile(int fromX, float alignX) {
-        yPosition = 0;
-        xPosition = fromX;
-        this.alignX = alignX;
+    Missile(Bitmap bitmap, int fromX, float alignX) {
+        this.bitmap = bitmap;
 
-        paint.setColor(Color.RED);
+        //yPosition = 0;
+        //xPosition = fromX;
+        //this.alignX = alignX;
+
+        int left = (int) xPosition;
+        int top = (int) yPosition;
+        int right = left + bitmap.getWidth();
+        int bottom = top + bitmap.getHeight();
+        rect = new Rect(left, top, right, bottom);
+
+        //paint.setColor(Color.RED);
     }
 
     @Override
@@ -59,8 +73,11 @@ public class Missile extends BaseObject {
         if (object.getType() != Type.Missie) {
             return false;
         }
+        int x = Math.round(object.xPosition);
+        int y = Math.round(object.yPosition);
+        return rect.contains(x, y);
 
-        return (calcDistance(this, object) < SIZE);
+        //return (calcDistance(this, object) < SIZE);
     }
 
     //タイプとしてMissileを返す
@@ -75,6 +92,8 @@ public class Missile extends BaseObject {
         if (state != STATE_NORMAL) {
             return;
         }
-        canvas.drawCircle(xPosition, yPosition, SIZE, paint);
+        canvas.drawBitmap(bitmap, xPosition, yPosition, paint);
+        //canvas.drawBitmap(bitmap, xPosition, yPosition, paint);
+        //canvas.drawCircle(xPosition, yPosition, SIZE, paint);
     }
 }

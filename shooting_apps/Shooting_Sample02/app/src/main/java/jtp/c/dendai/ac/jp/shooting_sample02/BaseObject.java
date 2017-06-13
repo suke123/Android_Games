@@ -22,13 +22,14 @@ public abstract class BaseObject {
 
     public abstract Type getType();
 
-    float xPosition;
-    float yPosition;
+    float xPosition;        //ObjectのX座標
+    float yPosition;        //Objectのy座標
 
     public abstract void draw(Canvas canvas);
 
     public boolean isAvailable(int width, int height) {
-        if (yPosition < 0 || xPosition < 0 || yPosition > height || xPosition > width) {
+        //if (yPosition < 0 || xPosition < 0 || yPosition > height || xPosition > width) {
+        if (yPosition < 0 || yPosition > height) {
             return false;
         }
         if (state == STATE_DESTROYED) {
