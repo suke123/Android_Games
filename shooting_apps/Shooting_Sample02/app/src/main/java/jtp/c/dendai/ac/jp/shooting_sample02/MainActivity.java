@@ -17,8 +17,6 @@ public class MainActivity extends AppCompatActivity implements GameView.EventCal
         gameView.setEventCallback(this);
 
         setContentView(gameView);
-
-
     }
 
     @Override

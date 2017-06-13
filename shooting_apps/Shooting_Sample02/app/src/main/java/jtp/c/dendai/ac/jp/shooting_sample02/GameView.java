@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -18,6 +19,7 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import android.os.Handler;
+import android.widget.ImageView;
 
 import static android.graphics.Typeface.BOLD_ITALIC;
 
@@ -47,14 +49,18 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     private Handler handler = new Handler();
 
     private static final long DRAW_INTERVAL = 1000 / 100;   //描画間隔
-
     private static final int MISSILE_LAUNCH_WEIGHT = 50;
-
     private static final float HIGHSCORE_TEXT_SIZE = 30.0f;
     private static final float SCORE_TEXT_SIZE = 70.0f;
 
     private MyFighter myFighter;        //自機クラス
     private MyBullet bullet;            //自弾クラスkurasu
+    public ImageView myFighterImageView;
+    private Bitmap myFighterBitmap;
+    View.OnTouchListener myListener;
+
+    private int preDx = 0, preDy = 0, newDx = 0, newDy = 0;
+
     //private int bullet_type = 1;
     private final List<BaseObject> missileList = new ArrayList<>();
     private final Random rand = new Random(System.currentTimeMillis());
@@ -135,6 +141,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
     public GameView(Context context) {
         super(context);
 
+        //myListener = new MyListener();
+
         paintHighscore.setColor(Color.BLACK);
         paintHighscore.setTypeface(Typeface.defaultFromStyle(BOLD_ITALIC));
         paintHighscore.setTextSize(HIGHSCORE_TEXT_SIZE);
@@ -146,6 +154,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         paintScore.setAntiAlias(true);
 
         getHolder().addCallback(this);
+
+        myFighterImageView = (ImageView)findViewById(R.id.image_view);
+
     }
 
     protected void drawGame(Canvas canvas) {
@@ -155,8 +166,10 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int height = canvas.getHeight();
 
         if (myFighter == null) {
-            Bitmap myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
+            myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
             myFighter = new MyFighter(myFighterBitmap, width, height);
+            //myFighterImageView.setImageBitmap(myFighterBitmap);
+            //myFighterImageView.setOnTouchListener(myListener);
 
         }
 
@@ -228,22 +241,45 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        switch (event.getAction()) {
-            case MotionEvent.ACTION_DOWN:
-                fire(event.getX(), event.getY());
-                break;
-        }
+        //switch (event.getAction()) {
+            //case MotionEvent.ACTION_DOWN:
+                //fire(event.getX(), event.getY());
+                // x,y 位置取得
+                newDx = (int) event.getRawX();
+                newDy = (int) event.getRawY();
 
-        return super.onTouchEvent(event);
+                switch (event.getAction()) {
+                    // タッチダウンでdragされた
+                    case MotionEvent.ACTION_MOVE:
+                        // ACTION_MOVEでの位置
+                        int dx = myFighterImageView.getLeft() + (newDx - preDx);
+                        int dy = myFighterImageView.getTop() + (newDy - preDy);
+
+                        // 画像の位置を設定する
+                        myFighterImageView.layout(dx, dy, dx + myFighterImageView.getWidth(),
+                                dy + myFighterImageView.getHeight());
+
+                        Log.d("onTouch", "ACTION_MOVE: dx=" + dx + ", dy=" + dy);
+                        break;
+                }
+
+                // タッチした位置を古い位置とする
+                preDx = newDx;
+                preDy = newDy;
+
+                return true;
+        //}
+
+        //return super.onTouchEvent(event);
     }
 
-    private void fire(float x, float y) {
+    /*private void fire(float x, float y) {
         float alignX = (x - myFighter.rect.centerX()) / Math.abs(y - myFighter.rect.centerY());
         Bitmap bulletBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mybullet);
 
         bullet = new MyBullet(bulletBitmap, myFighter.rect, alignX);
         bulletList.add(0, bullet);
-    }
+    }*/
 
     private Missile launchMissile(int width, int height) {
         Bitmap enemyBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.enemy01);
@@ -254,4 +290,34 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         float alignX = (toX - fromX) / (float) height;
         return new Missile(enemyBitmap, fromX, alignX);
     }
+/*
+    private class MyListener implements OnTouchListener {
+        public boolean onTouch(View v, MotionEvent event) {
+            // x,y 位置取得
+            newDx = (int) event.getRawX();
+            newDy = (int) event.getRawY();
+
+            switch (event.getAction()) {
+                // タッチダウンでdragされた
+                case MotionEvent.ACTION_MOVE:
+                    // ACTION_MOVEでの位置
+                    int dx = myFighterImageView.getLeft() + (newDx - preDx);
+                    int dy = myFighterImageView.getTop() + (newDy - preDy);
+
+                    // 画像の位置を設定する
+                    myFighterImageView.layout(dx, dy, dx + myFighterImageView.getWidth(),
+                            dy + myFighterImageView.getHeight());
+
+                    Log.d("onTouch", "ACTION_MOVE: dx=" + dx + ", dy=" + dy);
+                    break;
+            }
+
+            // タッチした位置を古い位置とする
+            preDx = newDx;
+            preDy = newDy;
+
+            return true;
+        }
+    }
+    */
 }

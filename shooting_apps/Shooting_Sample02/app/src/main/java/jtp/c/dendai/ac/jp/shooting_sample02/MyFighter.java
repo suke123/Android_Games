@@ -13,20 +13,24 @@ import android.widget.ImageView;
  * Created by taka on 2017/06/01.
  */
 
-public class MyFighter extends BaseObject implements View.OnTouchListener {
+public class MyFighter extends BaseObject {
     private final Paint paint = new Paint();
 
     private ImageView imageView;
+    private View view;
+    private GameView gameView;
 
     public final Bitmap bitmap;
     public final Rect rect;
     private int preDx = 0, preDy = 0, newDx = 0, newDy = 0;
 
+    int left,top;
+
     public MyFighter(Bitmap bitmap, int width, int height) {
         this.bitmap = bitmap;
 
-        int left = (width - bitmap.getWidth()) / 2;
-        int top = height - bitmap.getHeight();
+        left = (width - bitmap.getWidth()) / 2;
+        top = height - bitmap.getHeight();
         int right = left + bitmap.getWidth();
         int bottom = top + bitmap.getHeight();
         rect = new Rect(left, top, right, bottom);
@@ -57,33 +61,6 @@ public class MyFighter extends BaseObject implements View.OnTouchListener {
             return;
         }
         canvas.drawBitmap(bitmap, rect.left, rect.top, paint);
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        // x,y 位置取得
-        newDx = (int) event.getRawX();
-        newDy = (int) event.getRawY();
-
-        switch (event.getAction()) {
-            // タッチダウンでdragされた
-            case MotionEvent.ACTION_MOVE:
-                // ACTION_MOVEでの位置
-                int dx = imageView.getLeft() + (newDx - preDx);
-                int dy = imageView.getTop() + (newDy - preDy);
-
-                // 画像の位置を設定する
-                imageView.layout(dx, dy, dx + imageView.getWidth(), dy + imageView.getHeight());
-
-                Log.d("onTouch", "ACTION_MOVE: dx=" + dx + ", dy=" + dy);
-                break;
-        }
-
-        // タッチした位置を古い位置とする
-        preDx = newDx;
-        preDy = newDy;
-
-        return true;
     }
 
     @Override

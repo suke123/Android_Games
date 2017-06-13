@@ -17,8 +17,8 @@ import static java.lang.Math.sin;
  */
 
 public class Missile extends BaseObject {
-    private static final float MOVE_WEIGHT = 3.0f;
-    private static final float SIZE = 10f;
+    //private static final float MOVE_WEIGHT = 1.0f;
+    //private static final float SIZE = 10f;
     private final Paint paint = new Paint();
 
     public final Bitmap bitmap;
@@ -26,18 +26,18 @@ public class Missile extends BaseObject {
 
     int count;
 
-    private Random rand = new Random();
-    private int missile_move_type = rand.nextInt(3);
+    //private Random rand = new Random();
+    //private int missile_move_type = rand.nextInt(3);
 
     //public final float alignX;
 
-    double missile_move_x, getMissile_move_y;
+    //double missile_move_x, getMissile_move_y;
 
     Missile(Bitmap bitmap, int fromX, float alignX) {
         this.bitmap = bitmap;
 
-        //yPosition = 0;
-        //xPosition = fromX;
+        yPosition = 0;
+        xPosition = fromX;
         //this.alignX = alignX;
 
         int left = (int) xPosition;
@@ -61,7 +61,7 @@ public class Missile extends BaseObject {
             yPosition += 0.5 * MOVE_WEIGHT;
             xPosition -= 0.5 * alignX * MOVE_WEIGHT;
         } else {*/
-        xPosition += Math.cos(theta) * 5;// - theta * Math.sin(theta);
+        //xPosition += Math.cos(theta) * 5;// - theta * Math.sin(theta);
         yPosition += 1;// += Math.cos(theta);// + theta * Math.cos(theta) + rand.nextDouble();
         //}
     }
