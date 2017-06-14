@@ -9,6 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
+
 /**
  * Created by taka on 2017/06/01.
  */
@@ -66,5 +67,13 @@ public class MyFighter extends BaseObject {
     @Override
     public void move() {
 
+    }
+
+    public int getWidth() {
+        return bitmap.getWidth();
+    }
+
+    public int getHeight() {
+        return bitmap.getHeight();
     }
 }
