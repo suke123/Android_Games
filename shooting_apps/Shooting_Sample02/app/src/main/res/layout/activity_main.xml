@@ -6,12 +6,23 @@
     android:layout_height="match_parent"
     tools:context="jtp.c.dendai.ac.jp.shooting_sample02.MainActivity">
 
-    <ImageView
-        android:id="@+id/image_view"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/jibun"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="73dp"
+        android:text="Game Title"
+        android:textSize="50sp" />
 
+    <Button
+        android:id="@+id/start_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="112dp"
+        android:text="TAP TO START"
+        android:textSize="20sp" />
 </RelativeLayout>

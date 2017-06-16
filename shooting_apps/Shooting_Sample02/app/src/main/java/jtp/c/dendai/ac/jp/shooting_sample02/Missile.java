@@ -17,7 +17,7 @@ import static java.lang.Math.sin;
  */
 
 public class Missile extends BaseObject {
-    //private static final float MOVE_WEIGHT = 1.0f;
+    private static final float MOVE_WEIGHT = 1.0f;
     //private static final float SIZE = 10f;
     private final Paint paint = new Paint();
 
@@ -53,8 +53,8 @@ public class Missile extends BaseObject {
     public void move() {
         //yPosition += 0.1 * MOVE_WEIGHT;
         //xPosition += alignX * MOVE_WEIGHT;
-        count++;
-        double theta = Math.toRadians(count) * 5;
+        //count++;
+        //double theta = Math.toRadians(count) * 5;
         /*if (missile_move_type == 0) {
             yPosition += 0.5 * MOVE_WEIGHT;
         } else if (missile_move_type == 1) {
@@ -62,7 +62,7 @@ public class Missile extends BaseObject {
             xPosition -= 0.5 * alignX * MOVE_WEIGHT;
         } else {*/
         //xPosition += Math.cos(theta) * 5;// - theta * Math.sin(theta);
-        yPosition += 1;// += Math.cos(theta);// + theta * Math.cos(theta) + rand.nextDouble();
+        yPosition += 0.5 * MOVE_WEIGHT; // += Math.cos(theta);// + theta * Math.cos(theta) + rand.nextDouble();
         //}
     }
 

@@ -49,11 +49,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
     private Handler handler = new Handler();
 
-    private static final long DRAW_INTERVAL = 1000 / 50;   //描画間隔
-    private static final long BULLET_SHOOT_INTERVAL = 1000 / 20;   //弾の発射間隔
-    private static final int MISSILE_LAUNCH_WEIGHT = 10;
+    private static final long DRAW_INTERVAL = 1000 / 100;   //描画間隔
+    private static final long BULLET_SHOOT_INTERVAL = 30;   //弾の発射間隔
+    private static final int MISSILE_LAUNCH_WEIGHT = 100;    //敵の出現間隔
     private static final float HIGHSCORE_TEXT_SIZE = 30.0f;
     private static final float SCORE_TEXT_SIZE = 70.0f;
+
+    int shootTime = 0;      //自機弾発射調整用
+    int missileTime = 0;    //敵機出現調整用
 
     private MyFighter myFighter;        //自機クラス
     private MyBullet bullet;            //自弾クラスkurasu
@@ -95,7 +98,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 }
 
                 drawGame(canvas);
-                shootBullet();
+                missileTime++;
+                shootBullet((int) BULLET_SHOOT_INTERVAL);
+                shootTime++;
                 holder.unlockCanvasAndPost(canvas);
 
                 synchronized (this) {
@@ -109,8 +114,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         }
     }
 
-    private void shootBullet() {
-        fire(getX(), getY());
+    private void shootBullet(int drawInterval) {
+        while (shootTime > drawInterval) {
+            fire(getX(), getY());
+            shootTime -= drawInterval;
+        }
 
     }
 
@@ -151,10 +159,13 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         //myListener = new MyListener();
 
+        /*
         paintHighscore.setColor(Color.BLACK);
         paintHighscore.setTypeface(Typeface.defaultFromStyle(BOLD_ITALIC));
         paintHighscore.setTextSize(HIGHSCORE_TEXT_SIZE);
         paintHighscore.setAntiAlias(true);
+        */
+
 
         paintScore.setColor(Color.BLACK);
         paintScore.setTypeface(Typeface.defaultFromStyle(BOLD_ITALIC));
@@ -163,8 +174,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         getHolder().addCallback(this);
 
-        myFighterImageView = (ImageView) findViewById(R.id.image_view);
-        myFighterBitmap = ((BitmapDrawable) myFighterImageView.getDrawable()).getBitmap();
+        //myFighterImageView = (ImageView) findViewById(R.id.image_view);
 
     }
 
@@ -174,9 +184,16 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
         int width = canvas.getWidth();
         int height = canvas.getHeight();
 
+        shootBullet((int) BULLET_SHOOT_INTERVAL);
+
         if (myFighter == null) {
+            /*try {
+                myFighterBitmap = ((BitmapDrawable) myFighterImageView.getDrawable()).getBitmap();
+            } catch (NullPointerException n) {
+                Log.d("Error", "myFighterBitmap is Null!");
+            }*/
             //myFighterBitmap = ((BitmapDrawable) myFighterImageView.getDrawable()).getBitmap();
-            //myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
+            myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
             //myFighterImageView.setImageBitmap(myFighterBitmap);
             myFighter = new MyFighter(myFighterBitmap, width, height);
             //myFighterImageView.setImageBitmap(myFighterBitmap);
@@ -189,9 +206,11 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             Bullet bullet = new Bullet(myFighterBitmap, width, height);
         }*/
 
-        if (rand.nextInt(MISSILE_LAUNCH_WEIGHT) == 0) {
+        //if (rand.nextInt(MISSILE_LAUNCH_WEIGHT) == 0) {
+        if (missileTime > MISSILE_LAUNCH_WEIGHT) {
             Missile missile = launchMissile(width, height);
             missileList.add(missile);
+            missileTime -= MISSILE_LAUNCH_WEIGHT;
         }
         drawObjectList(canvas, missileList, width, height);
 
@@ -232,8 +251,8 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         myFighter.draw(canvas);
 
-        canvas.drawText("TOP:" + String.valueOf(highScore), 10, HIGHSCORE_TEXT_SIZE, paintHighscore);
-        canvas.drawText(String.valueOf(score), 10, SCORE_TEXT_SIZE, paintScore);
+        //canvas.drawText("TOP:" + String.valueOf(highScore), 10, HIGHSCORE_TEXT_SIZE, paintHighscore);
+        canvas.drawText(String.valueOf(score), 10, HIGHSCORE_TEXT_SIZE, paintScore);
     }
 
     private static void drawObjectList(
@@ -263,12 +282,17 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             // タッチダウンでdragされた
             case MotionEvent.ACTION_MOVE:
                 // ACTION_MOVEでの位置
-                int dx = myFighter.left + (newDx - preDx);
-                int dy = myFighter.top + (newDy - preDy);
+                //int dx = myFighterBitmap.getWidth() + (newDx - preDx);
+                //int dy = myFighterBitmap.getHeight() + (newDy - preDy);
+
+                int dx = myFighterBitmap.getWidth() + (newDx - preDx);
+                int dy = myFighterBitmap.getHeight() + (newDy - preDy);
 
                 // 画像の位置を設定する
-                myFighterImageView.layout(dx, dy, dx + myFighter.getWidth(),
-                        dy + myFighter.getHeight());
+                //myFighterImageView.layout(dx, dy, dx + myFighterBitmap.getWidth(), dy + myFighterBitmap.getHeight());
+
+                myFighterImageView.layout(dx, dy, dx + myFighterBitmap.getWidth(),
+                        dy + myFighterBitmap.getHeight());
 
                 Log.d("onTouch", "ACTION_MOVE: dx=" + dx + ", dy=" + dy);
                 break;
@@ -290,14 +314,6 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         bullet = new MyBullet(bulletBitmap, myFighter.rect, alignX);
         bulletList.add(0, bullet);
-
-        synchronized (this) {
-            try {
-                wait(50);
-            } catch (InterruptedException e) {
-
-            }
-        }
     }
 
 
