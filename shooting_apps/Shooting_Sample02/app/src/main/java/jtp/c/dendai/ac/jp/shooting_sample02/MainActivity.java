@@ -7,8 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+//タイトル画面
 public class MainActivity extends AppCompatActivity {
-    private GameView gameView;
+    //private GameView gameView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

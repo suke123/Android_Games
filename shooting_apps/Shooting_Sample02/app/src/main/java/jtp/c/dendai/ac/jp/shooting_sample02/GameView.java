@@ -174,7 +174,7 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
 
         getHolder().addCallback(this);
 
-        //myFighterImageView = (ImageView) findViewById(R.id.image_view);
+        myFighterImageView = (ImageView) findViewById(R.id.image_view);
 
     }
 
@@ -192,9 +192,9 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
             } catch (NullPointerException n) {
                 Log.d("Error", "myFighterBitmap is Null!");
             }*/
-            //myFighterBitmap = ((BitmapDrawable) myFighterImageView.getDrawable()).getBitmap();
-            myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
-            //myFighterImageView.setImageBitmap(myFighterBitmap);
+            myFighterBitmap = ((BitmapDrawable) myFighterImageView.getDrawable()).getBitmap();
+            //myFighterBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.jibun);
+            myFighterImageView.setImageBitmap(myFighterBitmap);
             myFighter = new MyFighter(myFighterBitmap, width, height);
             //myFighterImageView.setImageBitmap(myFighterBitmap);
             //myFighterImageView.setOnTouchListener(myListener);
@@ -285,14 +285,14 @@ public class GameView extends SurfaceView implements SurfaceHolder.Callback {
                 //int dx = myFighterBitmap.getWidth() + (newDx - preDx);
                 //int dy = myFighterBitmap.getHeight() + (newDy - preDy);
 
-                int dx = myFighterBitmap.getWidth() + (newDx - preDx);
-                int dy = myFighterBitmap.getHeight() + (newDy - preDy);
+                int dx = myFighterImageView.getLeft() + (newDx - preDx);
+                int dy = myFighterImageView.getTop() + (newDy - preDy);
 
                 // 画像の位置を設定する
                 //myFighterImageView.layout(dx, dy, dx + myFighterBitmap.getWidth(), dy + myFighterBitmap.getHeight());
 
-                myFighterImageView.layout(dx, dy, dx + myFighterBitmap.getWidth(),
-                        dy + myFighterBitmap.getHeight());
+                myFighterImageView.layout(dx, dy, dx + myFighterImageView.getLeft(),
+                        dy + myFighterImageView.getTop());
 
                 Log.d("onTouch", "ACTION_MOVE: dx=" + dx + ", dy=" + dy);
                 break;
