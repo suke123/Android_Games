@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jtp.c.dendai.ac.jp.a2d_horizontalscrolling_actiongame01.MainActivity">
+
+    <ImageButton
+        android:id="@+id/arrow_left_button"
+        android:layout_width="43dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/b_button"
+        android:background="@null"
+        app:srcCompat="@drawable/yazirushi_left"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <ImageButton
+        android:id="@+id/arrow_up_button"
+        android:layout_width="30dp"
+        android:layout_height="43dp"
+        android:layout_above="@+id/arrow_down_button"
+        android:layout_marginBottom="10dp"
+        android:layout_toEndOf="@+id/arrow_left_button"
+        android:layout_toRightOf="@+id/arrow_left_button"
+        android:background="@null"
+        app:srcCompat="@drawable/yazirushi_up"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="206dp" />
+
+    <ImageButton
+        android:id="@+id/arrow_down_button"
+        android:layout_width="30dp"
+        android:layout_height="43dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/arrow_left_button"
+        android:layout_toRightOf="@+id/arrow_left_button"
+        android:background="@null"
+        app:srcCompat="@drawable/yazirushi_down"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <ImageButton
+        android:id="@+id/arrow_right"
+        android:layout_width="43dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/arrow_left_button"
+        android:layout_toEndOf="@+id/arrow_up_button"
+        android:layout_toRightOf="@+id/arrow_up_button"
+        android:background="@null"
+        app:srcCompat="@drawable/yazirushi_right"
+        tools:layout_editor_absoluteX="79dp"
+        tools:layout_editor_absoluteY="242dp" />
+
+    <ImageButton
+        android:id="@+id/a_button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/arrow_up_button"
+        android:background="@null"
+        app:srcCompat="@drawable/button_red"
+        tools:layout_editor_absoluteX="532dp"
+        tools:layout_editor_absoluteY="248dp" />
+
+    <ImageButton
+        android:id="@+id/b_button"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/a_button"
+        android:layout_toStartOf="@+id/a_button"
+        android:background="@null"
+        app:srcCompat="@drawable/blue_button"
+        tools:layout_editor_absoluteX="465dp"
+        tools:layout_editor_absoluteY="249dp" />
+
+    <!--
+    <ImageView
+        android:id="@+id/jibun_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/arrow_left_button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="28dp"
+        app:srcCompat="@drawable/jibun" />
+        -->
+</RelativeLayout>

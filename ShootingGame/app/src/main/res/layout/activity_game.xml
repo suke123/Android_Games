@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jtp.c.dendai.ac.jp.shootinggame.GameActivity">
+
+    <Button
+        android:id="@+id/toResult_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="#30111111"
+        android:text="TAP TO RESULT"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:typeface="sans" />
+
+</RelativeLayout>

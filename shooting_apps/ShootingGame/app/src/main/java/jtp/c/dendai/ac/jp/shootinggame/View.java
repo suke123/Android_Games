@@ -1,6 +1,7 @@
 package jtp.c.dendai.ac.jp.shootinggame;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Point;
 import android.view.MotionEvent;
@@ -29,9 +30,11 @@ public class View extends SurfaceView {
     private final Object lock;
     private int za = 2;
 
+    private int highscore;
+
     private GameActivity gameActivity;
 
-    public View(Context context, Point p,GameActivity gameActivity) {
+    public View(Context context, Point p, GameActivity gameActivity, int highscore) {
         super(context);
         this.context = context;
         width = p.x;
@@ -39,6 +42,8 @@ public class View extends SurfaceView {
         lock = new Object();
 
         this.gameActivity = gameActivity;
+
+        this.highscore = highscore;
     }
 
     public void init() {
@@ -104,8 +109,6 @@ public class View extends SurfaceView {
                 mikata.stop();
                 if (shutdown) {
                     gameActivity.toResult();
-                    //init();
-                    //start();
                 }
                 performClick();
                 break;
@@ -121,6 +124,11 @@ public class View extends SurfaceView {
 
     public int getScore() {
         return score.getScore();
+    }
+
+    public int getHighScore(int highscore) {
+        this.highscore = score.calcHighscore(highscore);
+        return highscore;
     }
 
     class MoveThread extends Thread {

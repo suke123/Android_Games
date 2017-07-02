@@ -12,29 +12,29 @@ import android.widget.TextView;
 
 public class ResultActivity extends Activity {
 
-    //private Score score = new Score();
-    //int resultScore = 0;
-
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        //resultScore = score.getScore();
+        final int highscore;
+
         Intent intent = getIntent();
-        //int resultScore = intent.getIntExtra("SCORE", 0);
 
         Button toTitle_btn = (Button) findViewById(R.id.toTitle_button);
         TextView scoreText = (TextView) findViewById(R.id.score_text);
-        //TextView topScoreText = (TextView) findViewById(R.id.topscore_text);
+        //TextView topScoreText = (TextView) findViewById(R.id.top_score_text);
 
-        //topScoreText.setText("TOP：" + intent.getIntExtra("SCORE", 0));
+        //topScoreText.setText("TOP：" + intent.getIntExtra("HIGHSCORE", 0));
         scoreText.setText("SCORE：" + intent.getIntExtra("SCORE", 0));
+
+        highscore = intent.getIntExtra("HIGHSCORE", 0);
 
         toTitle_btn.setOnClickListener(new android.view.View.OnClickListener() {
             public void onClick(android.view.View v) {
-                // Sub 画面を起動
+                // タイトル画面に遷移
                 Intent intent = new Intent();
                 intent.setClassName("jtp.c.dendai.ac.jp.shootinggame", "jtp.c.dendai.ac.jp.shootinggame.MainActivity");
+                intent.putExtra("HIGHSCORE", highscore);
                 startActivity(intent);
             }
         });

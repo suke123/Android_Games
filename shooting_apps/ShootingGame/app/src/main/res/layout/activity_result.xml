@@ -16,16 +16,29 @@
         android:fontFamily="cursive"
         android:text="Game Over"
         android:textSize="70sp" />
+<!--
+    <TextView
+        android:id="@+id/top_score_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/score_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:fontFamily="cursive"
+        android:text="TOP：xxxxxx"
+        android:textSize="25sp" />
+        -->
 
     <TextView
         android:id="@+id/score_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
         android:fontFamily="cursive"
         android:text="SCORE：xxxxxx"
-        android:textSize="35sp" />
+        android:textSize="35sp"
+        android:layout_above="@+id/toTitle_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp" />
 
     <Button
         android:id="@+id/toTitle_button"
