@@ -41,7 +41,6 @@ public class GameView
     private static final long FPS = 60;
 
     private static final int ADD_GROUND_COUNT = 5;
-
     private static final int GROUND_WIDTH = 400;
     private static final int GROUND_BLOCK_HEIGHT = 100;
 
