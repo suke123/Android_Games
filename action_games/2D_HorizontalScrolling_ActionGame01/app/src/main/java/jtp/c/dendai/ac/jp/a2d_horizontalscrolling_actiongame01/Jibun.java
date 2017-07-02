@@ -21,10 +21,11 @@ class Jibun {
     Bitmap bitmap;
 
     private int left, right, top, bottom;
-
+    private static final double GRAVITY = 0.6;
     private boolean onGround = true;
 
     private int counter = 0;
+
     RelativeLayout layout;
 
     private int SPEED = 6;
@@ -107,7 +108,7 @@ class Jibun {
 
                 //upボタンの処理
                 case R.id.arrow_up_button:
-
+                    imageView.setTop(imageView.getLeft() + SPEED);
                     break;
 
                 //downボタンの処理
