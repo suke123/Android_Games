@@ -31,7 +31,6 @@ class Jibun {
 
     public Jibun(Activity a) {
         activity = a;
-        setJibunImage(activity);
 
         View.OnLongClickListener myLongClickListener = new MyLongClickListener();
         View.OnClickListener myClickLisner = new MyClickListener();
@@ -39,8 +38,10 @@ class Jibun {
         setImageButtonID(activity);
         setImageButtonClickListener(myLongClickListener);
         setAB_ButtonClickListener(myClickLisner);
-        //setImageView(activity);
+        setImageView(activity);
         setJibunArroundNumber();
+
+        setJibunImage(activity);
 
         layout = (RelativeLayout) a.findViewById(R.id.layout);
     }
@@ -84,9 +85,9 @@ class Jibun {
         b_button.setOnClickListener(myClickLisner);
     }
 
-    /*private void setImageView(Activity a) {
+    private void setImageView(Activity a) {
         imageView = (ImageView) a.findViewById(R.id.jibun_image);
-    }*/
+    }
 
     private class MyLongClickListener implements View.OnLongClickListener {
         @Override
