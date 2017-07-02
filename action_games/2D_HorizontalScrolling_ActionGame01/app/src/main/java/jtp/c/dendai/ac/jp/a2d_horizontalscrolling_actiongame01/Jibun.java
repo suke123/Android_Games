@@ -108,7 +108,6 @@ class Jibun {
 
                 //upボタンの処理
                 case R.id.arrow_up_button:
-                    imageView.setTop(imageView.getLeft() + SPEED);
                     break;
 
                 //downボタンの処理
@@ -158,7 +157,10 @@ class Jibun {
 
                 //Aボタンの処理
                 case R.id.a_button:
-                    //imageView.layout(1 + imageView.getLeft(), top, 1 + imageView.getRight(), bottom);
+                    if(onGround){
+                        imageView.setTop(imageView.getTop() - 12);
+                        onGround = false;
+                    }
                     break;
 
                 //Bボタンの処理
