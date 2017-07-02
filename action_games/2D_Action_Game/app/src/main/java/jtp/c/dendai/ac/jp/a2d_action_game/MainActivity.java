@@ -3,7 +3,6 @@ package jtp.c.dendai.ac.jp.a2d_action_game;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -24,6 +23,7 @@ public class MainActivity extends Activity  implements GameView.Callback ,UnderV
         gameView.setCallback(this);
 
         setContentView(gameView);
+
     }
 
     @Override
