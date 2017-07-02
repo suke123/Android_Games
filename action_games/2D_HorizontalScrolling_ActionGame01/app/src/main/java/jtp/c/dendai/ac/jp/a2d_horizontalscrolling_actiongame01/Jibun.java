@@ -1,6 +1,9 @@
 package jtp.c.dendai.ac.jp.a2d_horizontalscrolling_actiongame01;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -15,6 +18,7 @@ class Jibun {
     private ImageButton left_arrow, right_arrow, up_arrow, down_arrow, a_button, b_button;
     private ImageView imageView;
     Activity activity;
+    Bitmap bitmap;
 
     private int left, right, top, bottom;
 
@@ -27,6 +31,7 @@ class Jibun {
 
     public Jibun(Activity a) {
         activity = a;
+        setJibunImage(activity);
 
         View.OnLongClickListener myLongClickListener = new MyLongClickListener();
         View.OnClickListener myClickLisner = new MyClickListener();
@@ -34,10 +39,15 @@ class Jibun {
         setImageButtonID(activity);
         setImageButtonClickListener(myLongClickListener);
         setAB_ButtonClickListener(myClickLisner);
-        setImageView(activity);
+        //setImageView(activity);
         setJibunArroundNumber();
 
         layout = (RelativeLayout) a.findViewById(R.id.layout);
+    }
+
+    private void setJibunImage(Activity a) {
+        Bitmap jibunBitmap = BitmapFactory.decodeResource(a.getResources(), R.drawable.jibun);
+        imageView.setImageBitmap(jibunBitmap);
     }
 
 
@@ -74,9 +84,9 @@ class Jibun {
         b_button.setOnClickListener(myClickLisner);
     }
 
-    private void setImageView(Activity a) {
+    /*private void setImageView(Activity a) {
         imageView = (ImageView) a.findViewById(R.id.jibun_image);
-    }
+    }*/
 
     private class MyLongClickListener implements View.OnLongClickListener {
         @Override
