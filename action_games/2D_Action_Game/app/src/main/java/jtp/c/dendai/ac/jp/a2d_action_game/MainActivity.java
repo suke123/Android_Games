@@ -9,7 +9,7 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity  implements GameView.Callback ,UnderView.Callback
+public class MainActivity extends Activity  implements GameView.Callback ,UnderView.Callback
 {
 
     private GameView gameView;
