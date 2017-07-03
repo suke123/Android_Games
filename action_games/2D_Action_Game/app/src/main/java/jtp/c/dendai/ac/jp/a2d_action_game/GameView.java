@@ -41,14 +41,15 @@ public class GameView
     private static final long FPS = 60;
 
     private static final int ADD_GROUND_COUNT = 5;
+
     private static final int GROUND_WIDTH = 400;
     private static final int GROUND_BLOCK_HEIGHT = 100;
 
-    private static final float POWER_GAUGE_HEIGHT = 30;
-    private static final Paint PAINT_POWER_GAUGE = new Paint();
+    private static final float POWER_GAUGE_HEIGHT = 30;//ゲージの高さ
+    private static final Paint PAINT_POWER_GAUGE = new Paint();//ゲージの色
 
     static {
-        PAINT_POWER_GAUGE.setColor(Color.RED);
+        PAINT_POWER_GAUGE.setColor(Color.RED);//ゲージの色
     }
 
     private Droid droid;
@@ -67,6 +68,9 @@ public class GameView
     public interface Callback {
         public void onGameOver();
     }
+
+
+
 
     private Callback callback;
 
@@ -105,13 +109,11 @@ public class GameView
 
         Paint paint = new Paint();
 
-            canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.WHITE);
             //  Canvas canvas1 = holder.lockCanvas();
 
-                    canvas.drawBitmap(bm, 0, 0, paint);
+        canvas.drawBitmap(bm, 0, 0, paint);
             u=false;
-
-
 
     }
 
@@ -160,6 +162,10 @@ public class GameView
             }
         }
 
+        /*
+        * touchDownStartTimeの値が0を越えると(画面がタッチされていれば)
+        * 経過時間に応じてゲージを表示する
+        * */
         if (touchDownStartTime > 0) {
             float elapsedTime = System.currentTimeMillis() - touchDownStartTime;
             canvas.drawRect(0, 0, width * (elapsedTime / MAX_TOUCH_TIME), POWER_GAUGE_HEIGHT,

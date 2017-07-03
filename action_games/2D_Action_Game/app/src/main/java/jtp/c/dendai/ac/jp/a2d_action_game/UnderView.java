@@ -10,11 +10,11 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 
 
 
@@ -35,6 +35,8 @@ public class UnderView extends SurfaceView implements Droid.Callback,
     private static final float POWER_GAUGE_HEIGHT = 30;
     private static final Paint PAINT_POWER_GAUGE = new Paint();
 
+
+
     static {
         PAINT_POWER_GAUGE.setColor(Color.RED);
     }
@@ -53,6 +55,8 @@ public class UnderView extends SurfaceView implements Droid.Callback,
     public interface Callback {
         public void onGameOver2();
     }
+
+
 
     private Callback callback;
 
@@ -208,6 +212,8 @@ public class UnderView extends SurfaceView implements Droid.Callback,
         if (isGameOver) {
             return;
         }
+
+
 
         isGameOver = true;
 

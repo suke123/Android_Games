@@ -46,9 +46,11 @@ public class Droid {
     }
 
     public void draw(Canvas canvas) {
-
+        //通常時はBITMAP_SRC_RUNNINGが示すブロックを表示する
         Rect src = BITMAP_SRC_RUNNING;
+
         if (acceleration != 0) {
+            //ジャンプ中または落下中(velocityが0)の場合はBITMAP_SRC_JUMPINGが示すブロックを表示する
             src = BITMAP_SRC_JUMPING;
         }
 
