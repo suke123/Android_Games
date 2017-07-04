@@ -51,6 +51,7 @@ public class UnderView extends SurfaceView implements Droid.Callback,
     private Ground lastGround;
 
     private final Random rand = new Random();
+    private GameActivity gameActivity;
 
     public interface Callback {
         public void onGameOver2();
@@ -68,12 +69,14 @@ public class UnderView extends SurfaceView implements Droid.Callback,
 
     private boolean isGameOver;
 
-    public UnderView(Context context) {
+    public UnderView(Context context, GameActivity gameActivity) {
         super(context);
 
         handler = new Handler();
 
         getHolder().addCallback(this);
+
+        this.gameActivity = gameActivity;
     }
 
     public void drawBG(Canvas canvas,Bitmap bm){
@@ -185,6 +188,9 @@ public class UnderView extends SurfaceView implements Droid.Callback,
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 touchDownStartTime = System.currentTimeMillis();
+                if(gameActivity.getIsDead()){
+                    gameActivity.ToTitle();
+                }
                 return true;
             case MotionEvent.ACTION_UP:
                 jumpDroid();

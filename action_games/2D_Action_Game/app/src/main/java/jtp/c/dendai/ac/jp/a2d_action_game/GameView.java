@@ -63,7 +63,8 @@ public class GameView
 
     private final Random rand = new Random();
 
-
+    //public boolean isDead = false;
+    private GameActivity gameActivity;
 
     public interface Callback {
         public void onGameOver();
@@ -84,12 +85,14 @@ public class GameView
 
     private boolean isGameOver;
 
-    public GameView(Context context) {
+    public GameView(Context context, GameActivity gameAvtivity) {
         super(context);
 
         handler = new Handler();
 
-     getHolder().addCallback(this);
+        getHolder().addCallback(this);
+
+        this.gameActivity = gameAvtivity;
     }
 
     public static Point getDisplaySize(Activity activity){
@@ -213,6 +216,9 @@ public class GameView
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 touchDownStartTime = System.currentTimeMillis();
+                if(gameActivity.getIsDead()){
+                    gameActivity.ToTitle();
+                }
                 return true;
             case MotionEvent.ACTION_UP:
                 jumpDroid();
@@ -249,7 +255,8 @@ public class GameView
 
         droid.shutdown();
 
-   handler.post(new Runnable() {
+
+        handler.post(new Runnable() {
             @Override
             public void run() {
                 callback.onGameOver();

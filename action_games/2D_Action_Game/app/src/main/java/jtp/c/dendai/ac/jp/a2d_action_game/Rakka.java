@@ -6,7 +6,7 @@ package jtp.c.dendai.ac.jp.a2d_action_game;
 
 public class Rakka {
 
-    private static int kazu=3;
+    private int kazu=3;
 
     public void rakka(){
         kazu -=1;

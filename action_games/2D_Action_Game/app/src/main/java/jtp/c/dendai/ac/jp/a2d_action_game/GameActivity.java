@@ -3,6 +3,7 @@ package jtp.c.dendai.ac.jp.a2d_action_game;
 /**
  * Created by taka on 2017/07/04.
  */
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,23 +11,24 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
+
 import jtp.c.dendai.ac.jp.a2d_action_game.Rakka;
 
-public class GameActivity extends Activity  implements GameView.Callback ,UnderView.Callback
-{
+public class GameActivity extends Activity implements GameView.Callback, UnderView.Callback {
 
     private GameView gameView;
     private UnderView underView;
     private String s = new String();
-    Rakka ra =new Rakka();
+    Rakka ra = new Rakka();
+    public boolean isDead = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        gameView = new GameView(this);
+        gameView = new GameView(this, this);
         gameView.setCallback(this);
-
 
 
         setContentView(gameView);
@@ -67,13 +69,14 @@ public class GameActivity extends Activity  implements GameView.Callback ,UnderV
     }
 
     @Override
-    public  void onGameOver() {
+    public void onGameOver() {
         ra.rakka();
-        if(ra.getrakka()<0){
+        if (ra.getrakka() < 0) {
             Toast.makeText(this, "GAME OVER", Toast.LENGTH_LONG).show();
+            isDead = true;
             return;
         }
-        underView = new UnderView(this);
+        underView = new UnderView(this, this);
         //    gameView.removeCallbacks(super);
         underView.setCallback(this);
         setContentView(underView);
@@ -85,13 +88,14 @@ public class GameActivity extends Activity  implements GameView.Callback ,UnderV
     }
 
     @Override
-    public  void onGameOver2() {
+    public void onGameOver2() {
         ra.rakka();
-        if(ra.getrakka()<0){
+        if (ra.getrakka() < 0) {
             Toast.makeText(this, "GAME OVER", Toast.LENGTH_LONG).show();
+            isDead = true;
             return;
         }
-        gameView = new GameView(this);
+        gameView = new GameView(this, this);
         //    gameView.removeCallbacks(super);
         gameView.setCallback(this);
         setContentView(gameView);
@@ -100,5 +104,17 @@ public class GameActivity extends Activity  implements GameView.Callback ,UnderV
         Toast.makeText(this, s, Toast.LENGTH_LONG).show();
         //  Intent intent = new Intent(getApplication(), UnderView.class);
         //  startActivity(intent);
+    }
+
+    public void ToTitle() {
+        // ゲーム画面を起動
+        Intent intent = new Intent();
+        intent.setClassName("jtp.c.dendai.ac.jp.a2d_action_game", "jtp.c.dendai.ac.jp.a2d_action_game.MainActivity");
+        startActivity(intent);
+        //getContext().startActivity(new Intent(getContext(), MainActivity.class));
+    }
+
+    public boolean getIsDead() {
+        return isDead;
     }
 }
