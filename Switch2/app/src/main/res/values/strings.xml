@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Switch</string>
+    <string name="title_activity_game">GameActivity</string>
+<!--
+    <string name="joken1">ゲームをクリアする</string>
+    <string name="joken2">%1$d秒以内にクリアする</string>
+    <string name="joken3">%2$d回以内のスイッチでクリアする</string>
+-->
+    <string name="stagename1">STAGE1</string>
+    <string name="stagename2">STAGE2</string>
+    <string name="stagename3">STAGE3</string>
+</resources>

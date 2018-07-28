@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/game_back"
+    tools:context="jtp.c.dendai.ac.jp.switch_test.MainActivity">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="68dp"
+        android:layout_weight="0.17"
+        android:background="@null"
+        android:text="-TAP TO START-"
+        android:textSize="18sp"
+        android:layout_marginTop="56dp"
+        android:layout_below="@+id/imageView5"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/title"
+        android:layout_alignParentTop="true" />
+
+    <ImageView
+        android:id="@+id/boy1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="90dp"
+        android:layout_marginRight="90dp"
+        android:src="@drawable/boy3"
+        android:layout_alignBottom="@+id/girl1"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button" />
+
+    <ImageView
+        android:id="@+id/girl1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="76dp"
+        android:layout_marginStart="76dp"
+        android:src="@drawable/girl5"
+        android:layout_alignBottom="@+id/button"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_marginBottom="49dp" />
+
+</RelativeLayout>

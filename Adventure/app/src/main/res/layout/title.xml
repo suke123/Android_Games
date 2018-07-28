@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/white"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/first" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_below="@+id/linearLayout">
+
+        <ImageButton
+            android:id="@+id/startbutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_weight="1"
+            android:scaleType="fitXY"
+            android:soundEffectsEnabled="false"
+            app:srcCompat="@drawable/hajime" />
+
+        <ImageButton
+            android:id="@+id/continuebutton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_weight="1"
+            android:soundEffectsEnabled="false"
+            app:srcCompat="@drawable/tuduki"
+            android:background="@null"/>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/title"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="59dp" />
+
+</RelativeLayout>

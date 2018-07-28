@@ -1,0 +1,496 @@
+<resources>
+    <string name="app_name">GRRシュミレーション</string>
+    <string name="action_settings">設定</string>
+    <string name="background">背景画像</string>
+    <string name="title">ゴリラ君はバナナを食べない</string>
+    <string name="startb">はじめから</string>
+    <string name="continueb">つづきから</string>
+    <string name="question_title">CHOOSE</string>
+    <string name="question_1">何をあげようかな？</string>
+    <string name="question_2">どうしよう...？</string>
+    <string name="exit">終了</string>
+    <string name="logOn">LOG</string>
+    <string name="LogOff">LOGx</string>
+    <string name="autoOn">オートON</string>
+    <string name="autoOff">オートOFF</string>
+    <string name="qsave">セーブ</string>
+    <string name="qsavecomplete">セーブしました</string>>
+
+
+    <string name="date1">x年5月7日</string>
+    <string name="date2">x年5月16日</string>
+    <string name="date3">x年5月20日</string>
+    <string name="date4">x年5月29日</string>
+    <string name="date5">x年6月6日</string>
+    <string name="date6">x年6月7日</string>
+    <string name="date7">x年6月8日</string>
+    <string name="date8">x年6月10日</string>
+
+    <string name="dateending">x年9月2日</string>
+
+    <string-array name="message1">
+        <item>ヤス：明日からのスケジュールね、これ</item>
+        <item>主人公：はい</item>
+    </string-array>
+
+    <string-array name="message2">
+        <item>主人公:どの動物にしよう……？</item>
+    </string-array>
+
+    <string-array name="message22">
+        <item>主人公:あれ？イルカなんていたっけ？</item>
+    </string-array>
+
+    <string-array name="question2">
+    <item>ゴリラのドンキーくん</item>
+    <item>ライオンのタカシくん</item>
+    <item>ゾウのワタルくん</item>
+</string-array>
+
+    <string-array name="question2_2">
+        <item>ゴリラのドンキーくん</item>
+        <item>ライオンのタカシくん</item>
+        <item>ゾウのワタルくん</item>
+        <item>イルカのハーヴェストくん</item>
+    </string-array>
+
+    <string-array name="message_aniD1">
+        <item>ヤス:明日からのスケジュールね、これ</item>
+        <item>主人公:はい</item>
+        <item>ヤス:本当に大丈夫？噛まれたりするかもしれないから気をつけてね</item>
+        <item>主人公:大丈夫ですよ！</item>
+    </string-array>
+    <string-array name="message_aniD2">
+        <item>ハーヴェストくん:……キューン</item>
+        <item>ハーヴェストが近づいてきた</item>
+    </string-array>
+    <string-array name="message_aniD3">
+        <item>ハーヴェストは嬉しそうに鳴いている。</item>
+    </string-array>
+    <string-array name="message_aniD4">
+        <item>ハーヴェストは暴れだし、私の手にガブリと噛み付いた。手には歯型がくっきりと残り、血がダラダラと垂れている。</item>
+        <item>痛い。</item>
+        <item>急いで救護室へ向かったけれど、その間にも血は流れ続けている。</item>
+        <item>しばらく世話はできそうにないや。</item>
+</string-array>
+    <string-array name="message_aniD5">
+        <item>ハーヴェストは私の手にガブリと噛み付いた。手には歯型がくっきりと残り、血がダラダラと垂れている。</item>
+        <item>痛い。</item>
+        <item>急いで救護室へ向かったけれど、その間にも血は流れ続けている。</item>
+        <item>しばらく世話はできそうにないや。</item>
+    </string-array>
+    <string-array name="message_aniD6">
+        <item>主人公:かわいい！</item>
+        <item>餌をあげて、掃除をしたら仕事は終わり。</item>
+        <item>今日はお疲れ様、自分。</item>
+    </string-array>
+    <string-array name="message_aniD7">
+        <item>ハーヴェストは餌を取りに行き、美味しそうに食べている。よかった。</item>
+    </string-array>
+    <string-array name="message_aniD8">
+        <item>ハーヴェストは興奮して動き回り、私の手にガブリと噛み付いた。手には歯型がくっきりと残り、血がダラダラと垂れている。</item>
+        <item>痛い。</item>
+        <item>急いで救護室へ向かったけれど、その間にも血は流れ続けている。</item>
+        <item>しばらく世話はできそうにないや。</item>
+    </string-array>
+    <string-array name="message_aniD9">
+        <item>園長:あー君！今日でハーヴェストの世話は終わりだよ。</item>
+        <item>主人公:はい。いざ終わるとなると寂しいです</item>
+        <item>園長:そういうもんだよ。だから、入れ込みすぎても大変なんだ。</item>
+        <item>園長:因みに明日、戸松くんが君の評価に来るから、よろしくね</item>
+        <item>戸松:こんにちは。あなたの評価ですが……。</item>
+        <item>主人公:……。</item>
+        <item>戸松:完璧です！</item>
+        <item>主人公:ホントですか！？</item>
+        <item>戸松:はい。あの獰猛なハーヴェストをてなづけるとは、流石です。</item>
+        <item>戸松:これからもどうか七木山動物公園をよろしくお願いします。</item>
+        <item>主人公:はい、こちらこそお願いします。</item>
+        <item>戸松:では、また明日から引き続きハーヴェストの世話をよろしくお願いします。</item>
+        <item>主人公:ええ！？</item>
+        <item>戸松:冗談ですよ。</item>
+        <item>主人公:そ、そうですよね……。</item>
+        <item>戸松:ハーヴェストの世話は嫌ですか？それなら……なんでもないです。</item>
+        <item>主人公:なんですか</item>
+        <item>戸松:ハーヴェストの世話をまたやって欲しいなあ、って</item>
+        <item>主人公:考えておきます</item>
+        <item>戸松:長話になってしまってすみません</item>
+        <item>主人公:いえ、大丈夫ですよ</item>
+        <item>戸松:（私の世話もして欲しい、なんて言えない……）</item>
+    </string-array>
+
+
+    <string-array name="message_aniend">
+        <item>こうして、私の飼育生活は一旦終わりを迎えた。</item>
+        <item>だけど、また来週からは別の仕事。</item>
+        <item>気を引き締めてがんばろう。</item>
+    </string-array>
+
+
+    <string-array name="message_aniX1">
+        <item>大丈夫！やることはやった！今日も頑張ろう！</item>
+        <item>マコトくん:……ホッホッウホッ</item>
+    </string-array>
+    <string-array name="message_aniX1_2">
+        <item>大丈夫！やることはやった！今日も頑張ろう！</item>
+        <item>マコトくん:……ホッホッウホッ</item>
+    </string-array>
+    <string-array name="message_aniX1_3">
+        <item>大丈夫！やることはやった！今日も頑張ろう！</item>
+        <item>マコトくん:……ホッホッウホッ</item>
+    </string-array>
+    <string-array name="message_aniX2">
+        <item>マコトくん:ウホウホ</item>
+        <item>好感度が上がった！</item>
+    </string-array>
+    <string-array name="message_aniX3">
+        <item>ドンキーくん:ウッホ</item>
+        <item>好感度が少し上がった！</item>
+    </string-array>
+    <string-array name="message_aniX4">
+        <item>ドンキーくん:ウホ……</item>
+        <item>握りつぶしてしまった</item>
+    </string-array>
+    <string-array name="message_aniX5">
+        <item>ドンキーくん:ホッホッホッホ！</item>
+        <item>一枚一枚を上手につまんで食べている</item>
+        <item>主人公:今日のドンキーはなんか違うわね</item>
+        <item>ドンキーくん:ウホッホウッホ！</item>
+    </string-array>
+    <string-array name="message_aniX6">
+        <item>園長:あー君！今日でドンキーの世話は終わりだよ。</item>
+        <item>主人公:はい。いざ終わるとなると寂しいです</item>
+        <item>園長:そういうもんだよ。だから、入れ込みすぎても大変なんだ。</item>
+        <item>園長:因みに明日、戸松くんが君の評価に来るから、よろしくね</item>
+        <item>戸松:評価通告です。お読みください</item>
+    </string-array>
+    <string-array name="message_aniX7">
+        <item>戸松:ドンキーはあなたとの別れを惜しんでいます。私はドンキーの世話を続けて欲しいと思っておりますが、どうですか。</item>
+        <item>主人公:……次の希望調査は来週ですよね？それまで待って頂いてもよろしいですか</item>
+        <item>戸松:もちろんです。良い返事を期待しております。</item>
+    </string-array>
+    <string-array name="message_aniX8">
+        <item>戸松:まあまあ、といったところでしょう。</item>
+        <item>私はアナタにドンキーの飼育を任せたこと、正解だと思っています。</item>
+        <item>ですから、今度はよりよい仕事を期待していますよ。</item>
+    </string-array>
+    <string-array name="message_aniX9">
+        <item>戸松:率直に言ってしまうと、アナタに飼育を任せて何かが変わったわけではありません。</item>
+        <item>ドンキーは他の飼育員に任せることにします</item>
+        <item>主人公:……。</item>
+        <item>戸松:もう一度、やりたいのですか？わかりました。</item>
+        <item>あとで上司に掛け合ってみますから、それ次第ではありますが。</item>
+    </string-array>
+    <string-array name="message_aniX10">
+        <item>こうして、私の飼育生活は一旦終わりを迎えた。</item>
+        <item>だけど、また来週からは別の仕事。</item>
+        <item>気を引き締めてがんばろう。</item>
+    </string-array>
+
+
+
+
+    <string-array name="message_aniY1">
+        <item>タカシくん:……ウウッ（爪を研いでいる）</item>
+    </string-array>
+    <string-array name="message_aniY1_2">
+        <item>タカシくん:……ウウッ（背中を掻いている）</item>
+    </string-array>
+    <string-array name="message_aniY1_3">
+        <item>タカシくん:……。（今にも眠ってしまいそうな目でこちらを見ている）</item>
+    </string-array>
+    <string-array name="message_aniY2">
+        <item>タカシくんは肉にかぶりついた。</item>
+        <item>美味しそうに食べてる。</item>
+        <item>好感度が上がった！</item>
+    </string-array>
+    <string-array name="message_aniY3">
+        <item>タカシくんは肉を食べている。</item>
+        <item>でも食べおわるのは早くなかった。食欲が無いのかな。</item>
+        <item>好感度が少し上がった！</item>
+    </string-array>
+    <string-array name="message_aniY4">
+        <item>タカシくんはFOODをちらりと見ると前足で踏みつぶしてしまった。</item>
+    </string-array>
+    <string-array name="message_aniY5">
+        <item>……今日は肉を食べる気分じゃないみたい。</item>
+        <item>タカシくんは眠ってしまった。</item>
+    </string-array>
+    <string-array name="message_aniY6">
+        <item>珍しく今日はFOODを美味しそうに食べてる。</item>
+        <item>好感度が上がった！</item>
+    </string-array>
+    <string-array name="message_aniY7">
+        <item>園長:あー君！今日でタカシの世話は終わりだよ。</item>
+        <item>主人公:はい。いざ終わるとなると寂しいです</item>
+        <item>園長:そういうもんだよ。だから、入れ込みすぎても大変なんだ。</item>
+        <item>園長:因みに明日、戸松くんが君の評価に来るから、よろしくね</item>
+        <item>戸松:評価通告です。お読みください</item>
+    </string-array>
+    <string-array name="message_aniY8">
+        <item>戸松:タカシはあなたとの別れを惜しんでいます。私はタカシの世話を続けて欲しいと思っておりますが、どうですか。</item>
+        <item>主人公:……次の希望調査は来週ですよね？それまで待って頂いてもよろしいですか</item>
+        <item>戸松:もちろんです。良い返事を期待しております。</item>
+    </string-array>
+    <string-array name="message_aniY9">
+        <item>戸松:まあまあ、といったところでしょう。</item>
+        <item>私はアナタにタカシの飼育を任せたこと、正解だと思っています。</item>
+        <item>ですから、今度はよりよい仕事を期待していますよ。</item>
+    </string-array>
+    <string-array name="message_aniY10">
+        <item>戸松:率直に言ってしまうと、アナタに飼育を任せて何かが変わったわけではありません。</item>
+        <item>タカシは他の飼育員に任せることにします</item>
+        <item>主人公:……。</item>
+        <item>戸松:もう一度、やりたいのですか？わかりました。</item>
+        <item>あとで上司に掛け合ってみますから、それ次第ではありますが。</item>
+    </string-array>
+    <string-array name="message_aniZ1">
+        <item>ワタルは鼻を使って器用に水浴びをしている。</item>
+    </string-array>
+    <string-array name="message_aniZ1_2">
+        <item>ワタルはケージの中を歩き回っている。</item>
+    </string-array>
+    <string-array name="message_aniZ1_3">
+        <item>ワタルは鼻を揺らしてこちらに向かって来た。</item>
+    </string-array>
+    <string-array name="message_aniZ2">
+        <item>美味しそうに食べてる。</item>
+        <item>好感度が上がった！</item>
+    </string-array>
+    <string-array name="message_aniZ3">
+        <item>あんまり食べおわるのは早くなかった。食欲が無いのかな。</item>
+        <item>好感度が少し上がった！</item>
+    </string-array>
+    <string-array name="message_aniZ4">
+        <item>ワタルはFOODをちらりと見ると鼻で払いのけてしまった。</item>
+    </string-array>
+    <string-array name="message_aniZ5">
+        <item>しかし吐き出してしまった。</item>
+    </string-array>
+    <string-array name="message_aniZ6">
+        <item>ワタルは珍しくFOODを食べている。今日はFOODをあげて正解だったみたい。</item>
+        <item>好感度が上がった！</item>
+    </string-array>
+    <string-array name="message_aniZ7">
+        <item>園長:あー君！今日でワタルの世話は終わりだよ。</item>
+        <item>主人公:はい。いざ終わるとなると寂しいです</item>
+        <item>園長:そういうもんだよ。だから、入れ込みすぎても大変なんだ。</item>
+        <item>園長:因みに明日、戸松くんが君の評価に来るから、よろしくね</item>
+        <item>戸松:評価通告です。お読みください</item>
+    </string-array>
+    <string-array name="message_aniZ8">
+        <item>戸松:ワタルはあなたとの別れを惜しんでいます。私はワタルの世話を続けて欲しいと思っておりますが、どうですか。</item>
+        <item>主人公:……次の希望調査は来週ですよね？それまで待って頂いてもよろしいですか</item>
+        <item>戸松:もちろんです。良い返事を期待しております。</item>
+    </string-array>
+    <string-array name="message_aniZ9">
+        <item>戸松:まあまあ、といったところでしょう。</item>
+        <item>私はアナタにワタルの飼育を任せたこと、正解だと思っています。</item>
+        <item>ですから、今度はよりよい仕事を期待していますよ。</item>
+    </string-array>
+    <string-array name="message_aniZ10">
+        <item>戸松:率直に言ってしまうと、アナタに飼育を任せて何かが変わったわけではありません。</item>
+        <item>ワタルは他の飼育員に任せることにします</item>
+        <item>主人公:……。</item>
+        <item>戸松:もう一度、やりたいのですか？わかりました。</item>
+        <item>あとで上司に掛け合ってみますから、それ次第ではありますが。</item>
+    </string-array>
+
+
+    <string-array name="question_aniX">
+        <item>バナナ</item>
+        <item>ゴリラFOOD</item>
+        <item>コーンフロスト</item>
+    </string-array>
+
+    <string-array name="question_aniY">
+<item>豚肉</item>
+        <item>牛肉</item>
+        <item>ライオンFOOD</item>
+    </string-array>
+
+    <string-array name="question_aniZ">
+        <item>     草</item>
+        <item>     リンゴ</item>
+        <item>     象FOOD   </item>
+    </string-array>
+
+    <string-array name="question_aniD1">
+        <item>     撫でる</item>
+        <item>     噴気孔を触ってみる</item>
+        <item>     口に手を近づける   </item>
+    </string-array>
+
+    <string-array name="question_aniD2">
+        <item>     餌を投げる</item>
+        <item>     背ビレを触ってみる</item>
+        <item>     いかがわしいイルカBOOKを見せる  </item>
+    </string-array>
+
+    <string-array name="question_aniD3">
+        <item>先生に相談する</item>
+        <item>授業を受けている誰かに聞く</item>
+        <item>もう少し自力で頑張ってみる</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+
+    <string-array name="question_ben8">
+        <item>先生に相談する</item>
+        <item>授業を受けている誰かに聞く</item>
+        <item>もう少し自力で頑張ってみる</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+
+
+    <string-array name="question_ben1">
+        <item>先生に相談する</item>
+        <item>授業を受けている誰かに聞く</item>
+        <item>もう少し自力で頑張ってみる</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+    <string-array name="message_ben2">
+        <item>岡部:わからない部分を整理し、先生に聞いてみることにした</item>
+        <item>岡部:必死に考え、上手くまとめてきたおかげか、先生から教えてもらう事で理解が深まった</item>
+        <item>岡部:そして、わかるようになってくるとだんだん面白くなってきた。</item>
+        <item>岡部:この調子で後期の授業に取り組み、分からないことは積極的に先生に相談しに行った。</item>
+        <item>岡部:そして、成績発表。なんとS評価をもらった。</item>
+        <item>岡部:半年努力を続けてきた結果、良い評価を貰えたのでとてもうれしかった。</item>
+        <item>岡部:そして、プログラミングが分かって楽しくなった。</item>
+        <item>End.「rank S」</item>
+    </string-array>
+
+    <string-array name="message_ben3">
+        <item>岡部:よくよく考えてみると、この授業に友達はいなかった。</item>
+        <item>岡部:まずは誰かに話しかけ、友達になってみようと考えた。</item>
+        <item>岡部:参加していた人は何人かいる訳だが、誰に話しかけてみようか･･･</item>
+    </string-array>
+
+    <string-array name="message_ben4">
+        <item>岡部:やっぱり、自力で勉強してみることにした。</item>
+        <item>岡部:わからないことがあっても、根気強く調べ、挑戦し続けて自分なりの答えを探し続けた。</item>
+        <item>岡部:時々挫けそうになったけれど、うまくできた時は達成感があった。</item>
+        <item>岡部:そして、成績発表。A評価をもらった。</item>
+        <item>岡部:半年の間、大変だったけれど自分なりに努力を続けてきた結果、それなりの評価を得ることが出来て嬉しかった</item>
+        <item>岡部:しかし、どうしてもわからなかったところがいくつかあり、その部分だけは心に残り続けていた。</item>
+        <item>岡部:とは言え、プログラミングが分かって楽しくなったので、これからも頑張っていきたいと思った。</item>
+        <item>End.「rank A」</item>
+    </string-array>
+
+
+    <string-array name="message_fre1">
+        <item>岡部:その日の授業が終わった。</item>
+        <item>岡部:参加していた人は何人かいる訳だが、誰に話しかけてみようか･･･</item>
+    </string-array>
+    <string-array name="question_fre1">
+        <item>前の方に座っていたXに話しかける</item>
+        <item>後ろで寝ていたYに話しかける</item>
+        <item>隣の机にいたZに話しかける</item>
+        <item>誰にも話しかけず、一人で頑張る</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+
+    <string-array name="question_freX">
+        <item>答えを丸写しして適当に合わせる</item>
+        <item>ついていけるよう必死に勉強する</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+    <string-array name="message_freX2">
+        <item>岡部:Xについていくのは大変そうだが、頑張って勉強を続けていった</item>
+        <item>岡部:Xも分からないことは快く教えてくれるので、楽しく勉強することができた</item>
+        <item>岡部:2人で勉強を続けるうちに、他にもわからない人が集まってきて、いつしか複数の人で勉強するようになっていた</item>
+        <item>岡部:みんなで教え合い、助け合いながら勉強していったので、面白さを感じ、自分の成長も感じていた</item>
+        <item>岡部:そして、成績発表。なんとS評価をもらった。</item>
+        <item>岡部:途中から評価なんか忘れていたけど、やっぱり評価されたらうれしい。</item>
+        <item>岡部:そして、プログラミングが分かっただけでなく、友達と勉強する楽しさも感じることができた。</item>
+        <item>End.「rank S」</item>
+    </string-array>
+
+
+
+    <string-array name="message_freY2">
+        <item>岡部:結果は大当たりだった。もしかしたら僕にはパチンコの才能があるのかもしれない</item>
+    </string-array>
+
+    <string-array name="message_freY3">
+        <item>岡部:結果は可もなく不可もなく。損をしなかっただけよかっただろう。</item>
+        <item>岡部:僕は冷静になって考えた。今回は良かったが、次もこうなるとは限らない。</item>
+        <item>岡部:Yはまた次も行こうと誘ってきた。</item>
+    </string-array>
+    <string-array name="question_freY">
+        <item>Yと共にパチンコに通い続ける</item>
+        <item>ほどほどにしよう</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+    <string-array name="message_freY4">
+        <item>岡部:結果はぼろ負けだった。初めてのパチンコだったが、かなり損した。</item>
+        <item>岡部:僕は冷静になって考えた。次は勝てるとは限らないしほどほどにすべきだと。</item>
+        <item>岡部:Yはまた次も行こうと誘ってきたが、考えを告げて勉強に戻ることにした。</item>
+    </string-array>
+
+    <string-array name="message_freY5">
+        <item>岡部:僕はたまに誘いに応じながらも勉強をつづけた。</item>
+        <item>岡部:そのうち、Yも焦り始めたのか一緒に勉強するようになっていた。</item>
+        <item>岡部:二人で真面目に勉強を続けたので、何とか評価Bを得ることが出来た</item>
+        <item>岡部:あのままハマってしまったらどうなっていたかわからないが、とりあえずは最悪の事態を避けることができたようだ。</item>
+        <item>End.「rank B」</item>
+    </string-array>
+
+    <string-array name="message_freY6">
+        <item>岡部:その後もYと一緒に、パチンコに熱中していった</item>
+        <item>岡部:いつしかYよりもパチンコ店に入り浸る時間が多くなっていた</item>
+        <item>岡部:途中から結果なんか忘れていたけど、やっぱり勝つことができたらうれしい。</item>
+        <item>岡部:そして、パチンコの面白さが分かって楽しくなった。</item>
+        <item>岡部:そのような生活を続けていくうちに、授業についていけなくなってきた。</item>
+    </string-array>
+
+
+    <string-array name="question_freZ">
+        <item>何も考えず、これからも適当に合わせる</item>
+        <item>Zを説得し、一緒に勉強する</item>
+        <item>一人で授業を受ける</item>
+        <item>単位放棄する</item>
+    </string-array>
+
+    <string-array name="message_freZ2">
+        <item>岡部:僕はZにどれだけマズい状況かを訴え、一緒に勉強しようと言った。</item>
+        <item>岡部:Zもついていけないという事実に気づき、考えを改めたらしく、一緒に勉強することに決めたようだ。</item>
+        <item>岡部:しかし、適当に過ごしてきたツケが回ってきたのかやはり全然わからない。</item>
+        <item>岡部:お互いに励まし合い、教え合いながらも真面目に勉強を続けていった。</item>
+        <item>岡部:その結果、何とか評価Cを得ることが出来た</item>
+        <item>岡部:あのまま適当に過ごしていたら確実に単位は落としていたことだろう。早めに気づくことが出来て良かった。</item>
+        <item>End.「rank C」</item>
+    </string-array>
+
+    <string-array name="message_freZ3">
+        <item>岡部:Zに言っても無駄そうなので、僕一人だけでも授業に真面目に取り組み始めた</item>
+        <item>岡部:しかし、適当に過ごしてきたツケが回ってきたのかやはり全然わからない。</item>
+        <item>岡部:あまりにもわからないため授業が苦痛に感じられ、僕の心はとうとう折れてしまった。</item>
+    </string-array>
+
+    <string-array name="message_god1">
+        <item>岡部:そもそも、朝の一限目から授業を受けるという事が無理だったのだ。僕は朝ゆっくり眠って昼前に起きる生活をしていた。</item>
+        <item>岡部:あるとき、ふと学長像の前を通りかかった。</item>
+        <item>？:･･･よ、･･･よ。</item>
+        <item>岡部:どこからか謎の声が聞こえるような気がする。</item>
+    </string-array>
+
+
+    <string-array name="message_d1">
+        <item>岡部:とりあえず適当に合わせているうちに冬休みが来た。</item>
+        <item>岡部:どこかから流れてきたプログラムが送られてきたので、それを貼り付けてなんとかレポートを提出した。</item>
+        <item>岡部:ところが、評価はD。不合格だった。いったい何が悪かったんだろう？</item>
+        <item>End.「rank D」</item>
+    </string-array>
+
+    <string-array name="messageend_dead">
+        <item>岡部:授業が難しく、ついていけそうになかった。僕は単位を放棄することを決意した。</item>
+        <item>岡部:もちろん評価はD。不合格だった。放棄したんだから当然だ。</item>
+        <item>End.「単位放棄」</item>
+    </string-array>
+    
+</resources>

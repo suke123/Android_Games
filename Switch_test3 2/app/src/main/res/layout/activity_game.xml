@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="jtp.c.dendai.ac.jp.switch_test.GameActivity">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="8dp">
+
+
+        <ImageButton
+            android:id="@+id/array_left_Button"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/array_left"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/array_right_Button"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/array_right"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:weightSum="1"
+        android:layout_alignTop="@+id/linearLayout2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageButton
+            android:id="@+id/change_Button"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+
+            android:layout_marginRight="5dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/change"
+            android:visibility="visible" />
+
+        <ImageButton
+            android:id="@+id/array_up_Button"
+            android:layout_width="120dp"
+            android:layout_height="80dp"
+            android:layout_alignTop="@+id/change_Button"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/array_up"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/change_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHANGE: "
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_alignBaseline="@+id/stagename_Text"
+        android:layout_alignBottom="@+id/stagename_Text"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <TextView
+        android:id="@+id/stagename_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="TextView"
+        android:textAllCaps="false"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/clearButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/stagename_Text"
+        android:layout_alignBottom="@+id/stagename_Text"
+        android:layout_marginLeft="169dp"
+        android:layout_marginStart="169dp"
+        android:layout_toEndOf="@+id/stagename_Text"
+        android:layout_toRightOf="@+id/stagename_Text"
+        android:background="@null"
+        android:text="back" />
+    <!--
+        <Chronometer
+            android:id="@+id/chronometer"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:textSize="20dp"
+            android:layout_marginRight="58dp"
+            android:layout_marginEnd="58dp"
+            android:textColor="#000"
+            android:layout_alignBaseline="@+id/stagename_Text"
+            android:layout_alignBottom="@+id/stagename_Text"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    -->
+</RelativeLayout>
